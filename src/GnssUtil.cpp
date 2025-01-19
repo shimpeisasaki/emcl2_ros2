@@ -53,7 +53,7 @@ double GnssUtil::kld()
     return kld;
 }
 
-void GnssUtil::gnssReset(double alpha, double alpha_th, std::vector<emcl2::Particle> & particles)
+void GnssUtil::gnssReset(double alpha, double alpha_th, std::vector<emcl2::Particle> & particles, double gnss_reset_var)
 {
     double beta = alpha < alpha_th ? 1 - alpha / alpha_th : 0.0;
     int particle_num = beta * particles.size();
@@ -61,8 +61,8 @@ void GnssUtil::gnssReset(double alpha, double alpha_th, std::vector<emcl2::Parti
     // RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "reset_sigma(x, y) = (%lf, %lf)", gnss_sigma_mx_(0, 0), gnss_sigma_mx_(1, 1));
     for(int i=0; i<particle_num; ++i)
     {
-        particles[i].p_.x_ = gnss_position_[0] + pfRanGaussian(gnss_var_);
-        particles[i].p_.y_ = gnss_position_[1] + pfRanGaussian(gnss_var_);
+        particles[i].p_.x_ = gnss_position_[0] + pfRanGaussian(gnss_reset_var);
+        particles[i].p_.y_ = gnss_position_[1] + pfRanGaussian(gnss_reset_var);
         particles[i].p_.t_ = 2 * (static_cast<double>(rand()) / RAND_MAX - 0.5) * M_PI;
     }
 }

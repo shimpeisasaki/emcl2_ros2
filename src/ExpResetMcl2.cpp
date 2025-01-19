@@ -291,7 +291,7 @@ void ExpResetMcl2::gnssResetWithLLCalc(Scan & scan)
 {
 	RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "GNSS RESET");
 	// odom_gnss_.setVariance(odom_gnss_., expansion_radius_position_*expansion_radius_position_);
-	gnss_utility_.gnssReset(alpha_, alpha_threshold_, particles_);
+	gnss_utility_.gnssReset(alpha_, alpha_threshold_, particles_, gnss_reset_var_);
 	for (auto & p : particles_) {
 		p.w_ *= p.likelihood(map_.get(), scan);
 	}
