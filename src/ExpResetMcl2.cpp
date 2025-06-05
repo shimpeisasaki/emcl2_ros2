@@ -257,11 +257,11 @@ void ExpResetMcl2::gnssResetAndExpReset(Scan & scan)
 
 void ExpResetMcl2::setGnssPose(const geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr msg)
 {
-	gnss_utility_.gnss_position_ << msg->pose.pose.position.x, msg->pose.pose.position.y;
-	gnss_utility_.gnss_sigma_mx_ << msg->pose.covariance[0], 0., 
-								 0., msg->pose.covariance[7];
+    gnss_utility_.gnss_position_ << msg->pose.pose.position.x, msg->pose.pose.position.y;
+    gnss_utility_.gnss_sigma_mx_ << msg->pose.covariance[0], 0., 
+                                    0., msg->pose.covariance[7];
     gnss_utility_.gnss_yaw_ = tf2::getYaw(msg->pose.pose.orientation);
-	// gnss_utility_.setVariance();
+    gnss_utility_.gnss_reset_var_ = msg->pose.covariance[35]; // 修正: 方位の共分散を保存
 }
 
 void ExpResetMcl2::setPfPose(double x, double y, double x_var, double y_var)

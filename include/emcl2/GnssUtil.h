@@ -26,10 +26,11 @@ class GnssUtil
     // double boxMuller(double sigma);
     // void setVariance(double gnss_var);
 
-      private:
+      public:
     double gnss_var_, pf_var_;
     double gnss_reset_var_;
 };
+
 }
 
 #endif // EMCL2__GNSSUTIL_H_
