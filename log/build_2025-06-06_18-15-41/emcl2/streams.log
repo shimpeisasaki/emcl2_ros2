@@ -1,0 +1,73 @@
+[0.016s] Invoking command in '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2 -DCMAKE_INSTALL_PREFIX=/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/install/emcl2
+[0.253s] -- The C compiler identification is GNU 11.4.0
+[0.428s] -- The CXX compiler identification is GNU 11.4.0
+[0.450s] -- Detecting C compiler ABI info
+[0.572s] -- Detecting C compiler ABI info - done
+[0.583s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.583s] -- Detecting C compile features
+[0.584s] -- Detecting C compile features - done
+[0.588s] -- Detecting CXX compiler ABI info
+[0.706s] -- Detecting CXX compiler ABI info - done
+[0.731s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.732s] -- Detecting CXX compile features
+[0.733s] -- Detecting CXX compile features - done
+[0.747s] -- Found ament_cmake_auto: 1.3.11 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.008s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.368s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.382s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.407s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.438s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.474s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.570s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.576s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.715s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.756s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.809s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.827s] -- Looking for pthread.h
+[1.933s] -- Looking for pthread.h - found
+[1.933s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[2.034s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[2.036s] -- Found Threads: TRUE  
+[2.454s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[2.457s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.457s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.514s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[2.591s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.591s] -- Configured cppcheck include dirs: /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include
+[2.591s] -- Configured cppcheck exclude dirs and/or files: 
+[2.596s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.604s] -- Added test 'lint_cmake' to check CMake code style
+[2.609s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.641s] -- Added test 'uncrustify' to check C / C++ code style
+[2.642s] -- Configured uncrustify additional arguments: 
+[2.646s] -- Added test 'xmllint' to check XML markup files
+[2.651s] -- Configuring done
+[2.671s] -- Generating done
+[2.679s] -- Build files have been written to: /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2
+[2.693s] Invoked command in '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2 -DCMAKE_INSTALL_PREFIX=/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/install/emcl2
+[2.696s] Invoking command in '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2 -- -j8 -l8
+[2.773s] [ 20%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/Mcl.cpp.o[0m
+[2.773s] [ 20%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/Particle.cpp.o[0m
+[2.773s] [ 30%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/Pose.cpp.o[0m
+[2.773s] [ 40%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/Scan.cpp.o[0m
+[2.773s] [ 50%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/OdomModel.cpp.o[0m
+[2.774s] [ 70%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/LikelihoodFieldMap.cpp.o[0m
+[2.776s] [ 70%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o[0m
+[2.788s] [ 80%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o[0m
+[3.733s] In file included from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/emcl2_node.h:8[m[K,
+[3.733s]                  from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:5[m[K:
+[3.734s] [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:[m[K [01;31m[Kfatal error: [m[Kwall_tracking_msgs/action/wall_tracking.hpp: そのようなファイルやディレクトリはありません
+[3.734s]    13 | #include [01;31m[K<wall_tracking_msgs/action/wall_tracking.hpp>[m[K
+[3.734s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.734s] compilation terminated.
+[3.742s] gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:174: CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o] エラー 1
+[3.742s] gmake[2]: *** 未完了のジョブを待っています....
+[3.776s] In file included from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:4[m[K:
+[3.776s] [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:[m[K [01;31m[Kfatal error: [m[Kwall_tracking_msgs/action/wall_tracking.hpp: そのようなファイルやディレクトリはありません
+[3.777s]    13 | #include [01;31m[K<wall_tracking_msgs/action/wall_tracking.hpp>[m[K
+[3.777s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.777s] compilation terminated.
+[3.783s] gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:90: CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o] エラー 1
+[8.003s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/emcl2_node.dir/all] エラー 2
+[8.003s] gmake: *** [Makefile:146: all] エラー 2
+[8.006s] Invoked command in '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2 -- -j8 -l8

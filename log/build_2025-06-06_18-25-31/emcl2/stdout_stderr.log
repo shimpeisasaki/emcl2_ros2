@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target emcl2_node[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o[0m
+[ 20%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o[0m
+[ 30%] [32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/GnssUtil.cpp.o[0m
+In file included from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/emcl2_node.h:8[m[K,
+                 from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:5[m[K:
+[01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:[m[K [01;31m[Kfatal error: [m[Kwall_tracking_msgs/action/wall_tracking.hpp: そのようなファイルやディレクトリはありません
+   13 | #include [01;31m[K<wall_tracking_msgs/action/wall_tracking.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:174: CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o] エラー 1
+gmake[2]: *** 未完了のジョブを待っています....
+In file included from [01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:4[m[K:
+[01m[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:[m[K [01;31m[Kfatal error: [m[Kwall_tracking_msgs/action/wall_tracking.hpp: そのようなファイルやディレクトリはありません
+   13 | #include [01;31m[K<wall_tracking_msgs/action/wall_tracking.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:90: CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o] エラー 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/emcl2_node.dir/all] エラー 2
+gmake: *** [Makefile:146: all] エラー 2

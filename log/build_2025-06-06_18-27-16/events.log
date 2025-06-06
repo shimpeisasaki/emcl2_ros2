@@ -1,0 +1,487 @@
+[0.000000] (-) TimerEvent: {}
+[0.000263] (emcl2) JobQueued: {'identifier': 'emcl2', 'dependencies': OrderedDict()}
+[0.000696] (emcl2) JobStarted: {'identifier': 'emcl2'}
+[0.012339] (emcl2) JobProgress: {'identifier': 'emcl2', 'progress': 'cmake'}
+[0.013262] (emcl2) JobProgress: {'identifier': 'emcl2', 'progress': 'build'}
+[0.014269] (emcl2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2', '--', '-j8', '-l8'], 'cwd': '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'ja:en'), ('USER', 'shimpei'), ('LC_TIME', 'en_US.UTF-8'), ('RASPICAT2_WS', '/home/shimpei/raspicat2'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/shimpei'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/shimpei/ros-tcp-endpoint_ws/src'), ('TERM_PROGRAM_VERSION', '1.100.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\\033[01;32m\\]\\u@\\h\\[\\033[01;34m\\] \\w\\[\\033[01;31m\\]$(__git_ps1 "[%s]")\\[\\033[00m\\]\\$\\[\\033[00m\\] \\[\x1b]633;B\x07\\]'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '973'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1106'), ('BUNDLED_DEBUGPY_PATH', '/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/bundled/libs/debugpy'), ('IM_CONFIG_CHECK_ENV', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '28822'), ('_colcon_cd_root', '/home/shimpei'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/shimpei/gnss_ws/install:/home/shimpei/raspicat2/install:/home/shimpei/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'shimpei'), ('JOURNAL_STREAM', '8:15647'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'shimpei'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/shimpei/ros2_ws/install/velodyne_description/share/'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/shimpei/.local/bin:/opt/ros/humble/bin:/home/shimpei/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/bundled/scripts/noConfigScripts:/home/shimpei/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/shimpei:@/tmp/.ICE-unix/1074,unix/shimpei:/tmp/.ICE-unix/1074'), ('INVOCATION_ID', '2ba89df0acd04e5695f13a299e58ddf0'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bc2c8cae5bdac384.txt'), ('LANG', 'ja_JP.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.0SG062'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-00fb0ebab1.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '123'), ('AMENT_PREFIX_PATH', '/home/shimpei/gnss_ws/install/gnss_launch:/home/shimpei/raspicat2/install/raspicat_speak2:/home/shimpei/raspicat2/install/raspicat_slam:/home/shimpei/raspicat2/install/raspicat_setup_scripts:/home/shimpei/raspicat2/install/raspicat_navigation:/home/shimpei/raspicat2/install/raspicat:/home/shimpei/raspicat2/install/raspicat_bringup:/home/shimpei/raspicat2/install/raspicat_description:/home/shimpei/ros2_ws/install/velodyne_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('RCUTILS_COLORIZED_OUTPUT', '1'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/shimpei/gnss_ws/install/gnss_launch:/home/shimpei/raspicat2/install/raspicat_speak2:/home/shimpei/raspicat2/install/raspicat_slam:/home/shimpei/raspicat2/install/raspicat_setup_scripts:/home/shimpei/raspicat2/install/raspicat_navigation:/home/shimpei/raspicat2/install/raspicat:/home/shimpei/raspicat2/install/raspicat_bringup:/home/shimpei/raspicat2/install/raspicat_description:/home/shimpei/ros2_ws/install/velodyne_description:/opt/ros/humble'), ('ANDROID_NDK_HOME', '/home/shimpei/unity_ws/src/ros2unityAndroid/android-ndk-r26b-linux')]), 'shell': False}
+[0.079943] (emcl2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target emcl2_node\x1b[0m\n'}
+[0.099735] (-) TimerEvent: {}
+[0.125215] (emcl2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o\x1b[0m\n'}
+[0.125526] (emcl2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o\x1b[0m\n'}
+[0.199886] (-) TimerEvent: {}
+[0.300252] (-) TimerEvent: {}
+[0.400694] (-) TimerEvent: {}
+[0.501291] (-) TimerEvent: {}
+[0.601652] (-) TimerEvent: {}
+[0.702027] (-) TimerEvent: {}
+[0.802419] (-) TimerEvent: {}
+[0.902814] (-) TimerEvent: {}
+[1.003203] (-) TimerEvent: {}
+[1.103596] (-) TimerEvent: {}
+[1.203977] (-) TimerEvent: {}
+[1.304346] (-) TimerEvent: {}
+[1.404725] (-) TimerEvent: {}
+[1.505134] (-) TimerEvent: {}
+[1.605916] (-) TimerEvent: {}
+[1.707067] (-) TimerEvent: {}
+[1.807477] (-) TimerEvent: {}
+[1.907890] (-) TimerEvent: {}
+[2.008269] (-) TimerEvent: {}
+[2.108682] (-) TimerEvent: {}
+[2.209011] (-) TimerEvent: {}
+[2.309315] (-) TimerEvent: {}
+[2.409724] (-) TimerEvent: {}
+[2.510168] (-) TimerEvent: {}
+[2.610606] (-) TimerEvent: {}
+[2.711025] (-) TimerEvent: {}
+[2.811467] (-) TimerEvent: {}
+[2.911881] (-) TimerEvent: {}
+[3.012275] (-) TimerEvent: {}
+[3.112622] (-) TimerEvent: {}
+[3.212934] (-) TimerEvent: {}
+[3.313276] (-) TimerEvent: {}
+[3.413658] (-) TimerEvent: {}
+[3.514008] (-) TimerEvent: {}
+[3.614347] (-) TimerEvent: {}
+[3.714691] (-) TimerEvent: {}
+[3.815016] (-) TimerEvent: {}
+[3.893326] (emcl2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/emcl2_node.h:8\x1b[m\x1b[K,\n'}
+[3.893565] (emcl2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:5\x1b[m\x1b[K:\n'}
+[3.893653] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:17:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwall_tracking_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.893733] (emcl2) StderrLine: {'line': b'   17 | using WallTrackingAction = \x1b[01;31m\x1b[Kwall_tracking_msgs\x1b[m\x1b[K::action::WallTracking;\n'}
+[3.893847] (emcl2) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.905163] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:18:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.905372] (emcl2) StderrLine: {'line': b'   18 | using GoalHandleWallTracking = rclcpp_action::ClientGoalHandle<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>;\n'}
+[3.905459] (emcl2) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.905535] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:18:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.905611] (emcl2) StderrLine: {'line': b'   18 | using GoalHandleWallTracking = rclcpp_action::ClientGoalHandle<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K;\n'}
+[3.905683] (emcl2) StderrLine: {'line': b'      |                                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.915145] (-) TimerEvent: {}
+[3.923561] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.923858] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr wt_client,\n'}
+[3.924022] (emcl2) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.924157] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.924288] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr wt_client,\n'}
+[3.924416] (emcl2) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.924556] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kwt_client\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.924685] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kwt_client\x1b[m\x1b[K,\n'}
+[3.924809] (emcl2) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.937574] (emcl2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:4\x1b[m\x1b[K:\n'}
+[3.937901] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:17:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwall_tracking_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.938077] (emcl2) StderrLine: {'line': b'   17 | using WallTrackingAction = \x1b[01;31m\x1b[Kwall_tracking_msgs\x1b[m\x1b[K::action::WallTracking;\n'}
+[3.938231] (emcl2) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.945304] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.945603] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr wt_client_;\n'}
+[3.945763] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.945925] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.946087] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr wt_client_;\n'}
+[3.946230] (emcl2) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.950466] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:18:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.950755] (emcl2) StderrLine: {'line': b'   18 | using GoalHandleWallTracking = rclcpp_action::ClientGoalHandle<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>;\n'}
+[3.950947] (emcl2) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.951097] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:18:82:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.951254] (emcl2) StderrLine: {'line': b'   18 | using GoalHandleWallTracking = rclcpp_action::ClientGoalHandle<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K;\n'}
+[3.951424] (emcl2) StderrLine: {'line': b'      |                                                                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.951702] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[3.951869] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K wt_client_;\n'}
+[3.952037] (emcl2) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.952190] (emcl2) StderrLine: {'line': b'      |                                                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[3.954574] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwt_client_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.954809] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kwt_client_\x1b[m\x1b[K;\n'}
+[3.954993] (emcl2) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.955144] (emcl2) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[3.969184] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:33:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.969475] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr wt_client,\n'}
+[3.969624] (emcl2) StderrLine: {'line': b'      |                                 \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.969767] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:51:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.969932] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr wt_client,\n'}
+[3.970078] (emcl2) StderrLine: {'line': b'      |                                                   \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.970224] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:32:64:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kwt_client\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.970365] (emcl2) StderrLine: {'line': b'   32 |           rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kwt_client\x1b[m\x1b[K,\n'}
+[3.970506] (emcl2) StderrLine: {'line': b'      |                                                                \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.972134] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.972345] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SendGoalOptions send_goal_options_;\n'}
+[3.972479] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.972602] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.972724] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SendGoalOptions send_goal_options_;\n'}
+[3.972857] (emcl2) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.973002] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[3.973129] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction>::\x1b[01;31m\x1b[KSendGoalOptions\x1b[m\x1b[K send_goal_options_;\n'}
+[3.973248] (emcl2) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.973365] (emcl2) StderrLine: {'line': b'      |                                                                   \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[3.978111] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksend_goal_options_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.978358] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction>::SendGoalOptions \x1b[01;31m\x1b[Ksend_goal_options_\x1b[m\x1b[K;\n'}
+[3.978517] (emcl2) StderrLine: {'line': b'      |                                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.987490] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[3.987809] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr wt_client_;\n'}
+[3.987961] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.988086] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.988211] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr wt_client_;\n'}
+[3.988334] (emcl2) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.988452] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[3.988570] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction>::\x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K wt_client_;\n'}
+[3.988687] (emcl2) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[3.988802] (emcl2) StderrLine: {'line': b'      |                                                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[3.989967] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.990257] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr & goal_handle);\n'}
+[3.990385] (emcl2) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.990503] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[3.990625] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr \x1b[01;31m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[3.990755] (emcl2) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.990959] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:74:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[3.991088] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[3.991208] (emcl2) StderrLine: {'line': b'      |                                  \x1b[34m\x1b[K~\x1b[m\x1b[K                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[3.991327] (emcl2) StderrLine: {'line': b'      |                                                                          \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[3.991445] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[3.991563] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr \x1b[01;31m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[3.991677] (emcl2) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.991795] (emcl2) StderrLine: {'line': b'      |                                                                            \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[3.991941] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:58:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwt_client_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[3.992067] (emcl2) StderrLine: {'line': b'   58 |         rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kwt_client_\x1b[m\x1b[K;\n'}
+[3.992187] (emcl2) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.992304] (emcl2) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[3.993656] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgoal_handle\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[3.994048] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr & \x1b[01;31m\x1b[Kgoal_handle\x1b[m\x1b[K);\n'}
+[3.994185] (emcl2) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.994302] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:65:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[3.994434] (emcl2) StderrLine: {'line': b'   65 |         [[maybe_unused]] typename \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr,\n'}
+[3.994556] (emcl2) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.994683] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.994810] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const std::shared_ptr<const typename WallTrackingAction::Feedback\x1b[01;31m\x1b[K>\x1b[m\x1b[K feedback);\n'}
+[3.994945] (emcl2) StderrLine: {'line': b'      |                                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[3.995063] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.995180] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[3.995297] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[3.995415] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<const typename WallTrackingAction::Feedback> feedback);\n'}
+[3.995535] (emcl2) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[3.995651] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.995770] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const std::shared_ptr<\x1b[01;31m\x1b[Kconst\x1b[m\x1b[K typename WallTrackingAction::Feedback> feedback);\n'}
+[3.995907] (emcl2) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[3.996026] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[3.996144] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[3.996262] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<const typename WallTrackingAction::Feedback> feedback);\n'}
+[3.996377] (emcl2) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.001552] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.001887] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::WrappedResult & result);\n'}
+[4.002022] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.002142] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.002275] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult \x1b[01;31m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.002393] (emcl2) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.002516] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.002636] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::WrappedResult\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.002755] (emcl2) StderrLine: {'line': b'      |                        \x1b[34m\x1b[K~\x1b[m\x1b[K                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[4.002890] (emcl2) StderrLine: {'line': b'      |                                                                    \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[4.003013] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.003130] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult \x1b[01;31m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.003246] (emcl2) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.003361] (emcl2) StderrLine: {'line': b'      |                                                                      \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.004075] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kresult\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.004231] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult & \x1b[01;31m\x1b[Kresult\x1b[m\x1b[K);\n'}
+[4.004359] (emcl2) StderrLine: {'line': b'      |                                                                       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.009566] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.009880] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SendGoalOptions send_goal_options_;\n'}
+[4.010017] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.010136] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.010257] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SendGoalOptions send_goal_options_;\n'}
+[4.010372] (emcl2) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.010487] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.010606] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction>::\x1b[01;31m\x1b[KSendGoalOptions\x1b[m\x1b[K send_goal_options_;\n'}
+[4.010722] (emcl2) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.010844] (emcl2) StderrLine: {'line': b'      |                                                                   \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.015252] (-) TimerEvent: {}
+[4.015696] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:59:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksend_goal_options_\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.015897] (emcl2) StderrLine: {'line': b'   59 |         rclcpp_action::Client<WallTrackingAction>::SendGoalOptions \x1b[01;31m\x1b[Ksend_goal_options_\x1b[m\x1b[K;\n'}
+[4.016031] (emcl2) StderrLine: {'line': b'      |                                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.029161] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.029467] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr & goal_handle);\n'}
+[4.029614] (emcl2) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.029740] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.029909] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr \x1b[01;31m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[4.030046] (emcl2) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.030169] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:74:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.030297] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[4.030423] (emcl2) StderrLine: {'line': b'      |                                  \x1b[34m\x1b[K~\x1b[m\x1b[K                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[4.030547] (emcl2) StderrLine: {'line': b'      |                                                                          \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[4.030669] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:75:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.030791] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr \x1b[01;31m\x1b[K&\x1b[m\x1b[K goal_handle);\n'}
+[4.030938] (emcl2) StderrLine: {'line': b'      |                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.031067] (emcl2) StderrLine: {'line': b'      |                                                                            \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.033175] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:63:77:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgoal_handle\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.033585] (emcl2) StderrLine: {'line': b'   63 |         void goalResponseCallback(const GoalHandleWallTracking::SharedPtr & \x1b[01;31m\x1b[Kgoal_handle\x1b[m\x1b[K);\n'}
+[4.033738] (emcl2) StderrLine: {'line': b'      |                                                                             \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.033887] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:65:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[4.034032] (emcl2) StderrLine: {'line': b'   65 |         [[maybe_unused]] typename \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr,\n'}
+[4.034156] (emcl2) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.034278] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.034402] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const std::shared_ptr<const typename WallTrackingAction::Feedback\x1b[01;31m\x1b[K>\x1b[m\x1b[K feedback);\n'}
+[4.034523] (emcl2) StderrLine: {'line': b'      |                                                                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.034644] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.034766] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:91:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.034906] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:32:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kinvalid template-id\n'}
+[4.035033] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const \x1b[01;31m\x1b[Kstd\x1b[m\x1b[K::shared_ptr<const typename WallTrackingAction::Feedback> feedback);\n'}
+[4.035157] (emcl2) StderrLine: {'line': b'      |                                \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.035276] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.035400] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] const std::shared_ptr<\x1b[01;31m\x1b[Kconst\x1b[m\x1b[K typename WallTrackingAction::Feedback> feedback);\n'}
+[4.035520] (emcl2) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.035643] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.035766] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:66:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass template placeholder \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr\x1b[m\x1b[K\xe2\x80\x99 not permitted in this context\n'}
+[4.035923] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<const typename WallTrackingAction::Feedback> feedback);\n'}
+[4.036050] (emcl2) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.041927] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.042327] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::WrappedResult & result);\n'}
+[4.042468] (emcl2) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.042593] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.042721] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult \x1b[01;31m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.042855] (emcl2) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.042994] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.043127] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::WrappedResult\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.043252] (emcl2) StderrLine: {'line': b'      |                        \x1b[34m\x1b[K~\x1b[m\x1b[K                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[4.043376] (emcl2) StderrLine: {'line': b'      |                                                                    \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[4.043498] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:69:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.043623] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult \x1b[01;31m\x1b[K&\x1b[m\x1b[K result);\n'}
+[4.043745] (emcl2) StderrLine: {'line': b'      |                                                                     \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.043897] (emcl2) StderrLine: {'line': b'      |                                                                      \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.046319] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:67:71:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kresult\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[4.046639] (emcl2) StderrLine: {'line': b'   67 |     void resultCallback(const GoalHandleWallTracking::WrappedResult & \x1b[01;31m\x1b[Kresult\x1b[m\x1b[K);\n'}
+[4.046785] (emcl2) StderrLine: {'line': b'      |                                                                       \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.115401] (-) TimerEvent: {}
+[4.215762] (-) TimerEvent: {}
+[4.316147] (-) TimerEvent: {}
+[4.416518] (-) TimerEvent: {}
+[4.516893] (-) TimerEvent: {}
+[4.617258] (-) TimerEvent: {}
+[4.717603] (-) TimerEvent: {}
+[4.817929] (-) TimerEvent: {}
+[4.918245] (-) TimerEvent: {}
+[5.018616] (-) TimerEvent: {}
+[5.118926] (-) TimerEvent: {}
+[5.219328] (-) TimerEvent: {}
+[5.319730] (-) TimerEvent: {}
+[5.421909] (-) TimerEvent: {}
+[5.522319] (-) TimerEvent: {}
+[5.622755] (-) TimerEvent: {}
+[5.723128] (-) TimerEvent: {}
+[5.824351] (-) TimerEvent: {}
+[5.924667] (-) TimerEvent: {}
+[5.978376] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:24:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.978761] (emcl2) StderrLine: {'line': b'   24 |   rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr wt_client,\n'}
+[5.978962] (emcl2) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.979117] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:24:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.979264] (emcl2) StderrLine: {'line': b'   24 |   rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr wt_client,\n'}
+[5.979409] (emcl2) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.979551] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:24:56:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K...\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kwt_client\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.979691] (emcl2) StderrLine: {'line': b'   24 |   rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kwt_client\x1b[m\x1b[K,\n'}
+[5.979800] (emcl2) StderrLine: {'line': b'      |                                                        \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.979923] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kemcl2::ExpResetMcl2::ExpResetMcl2(const emcl2::Pose&, int, const emcl2::Scan&, const std::shared_ptr<emcl2::OdomModel>&, const std::shared_ptr<emcl2::LikelihoodFieldMap>&, double, double, double, double, double, bool, const emcl2::GnssUtil&, bool, bool, double, double, double, int)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.980050] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:38:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kclass \xe2\x80\x98\x1b[01m\x1b[Kemcl2::ExpResetMcl2\x1b[m\x1b[K\xe2\x80\x99 does not have any field named \xe2\x80\x98\x1b[01m\x1b[Kwt_client_\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.980159] (emcl2) StderrLine: {'line': b'   38 |   \x1b[01;31m\x1b[Kwt_client_\x1b[m\x1b[K(wt_client),\n'}
+[5.980267] (emcl2) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.989377] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:38:14:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwt_client\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[5.989676] (emcl2) StderrLine: {'line': b'   38 |   wt_client_(\x1b[01;31m\x1b[Kwt_client\x1b[m\x1b[K),\n'}
+[5.989842] (emcl2) StderrLine: {'line': b'      |              \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.997916] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:39:28:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klast_reset_gnss_pos_pub\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Klast_reset_gnss_pos_pub_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.998211] (emcl2) StderrLine: {'line': b'   39 |   last_reset_gnss_pos_pub_(\x1b[01;31m\x1b[Klast_reset_gnss_pos_pub\x1b[m\x1b[K),\n'}
+[5.998371] (emcl2) StderrLine: {'line': b'      |                            \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.998511] (emcl2) StderrLine: {'line': b'      |                            \x1b[32m\x1b[Klast_reset_gnss_pos_pub_\x1b[m\x1b[K\n'}
+[6.012047] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:46:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksend_goal_options_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KSendGoalOptions\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[6.012331] (emcl2) StderrLine: {'line': b'   46 |         \x1b[01;31m\x1b[Ksend_goal_options_\x1b[m\x1b[K = rclcpp_action::Client<WallTrackingAction>::SendGoalOptions();\n'}
+[6.012481] (emcl2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.012621] (emcl2) StderrLine: {'line': b'      |         \x1b[32m\x1b[KSendGoalOptions\x1b[m\x1b[K\n'}
+[6.024788] (-) TimerEvent: {}
+[6.030532] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:46:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.030847] (emcl2) StderrLine: {'line': b'   46 |         send_goal_options_ = rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SendGoalOptions();\n'}
+[6.031022] (emcl2) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.031171] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:46:70:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[6.031423] (emcl2) StderrLine: {'line': b'   46 |         send_goal_options_ = rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SendGoalOptions();\n'}
+[6.031577] (emcl2) StderrLine: {'line': b'      |                                                                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.047707] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:24:46:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[KSharedPtr\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter\x07-Wunused-parameter\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.048044] (emcl2) StderrLine: {'line': b'   24 |   \x1b[01;35m\x1b[Krclcpp_action::Client<WallTrackingAction>::SharedPtr\x1b[m\x1b[K wt_client,\n'}
+[6.048227] (emcl2) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~\x1b[m\x1b[K\n'}
+[6.058282] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K At global scope:\n'}
+[6.058947] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:56:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[6.059248] (emcl2) StderrLine: {'line': b'   56 | void ExpResetMcl2::goalResponseCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr & goal_handle)\n'}
+[6.059417] (emcl2) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.059579] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:56:81:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.059738] (emcl2) StderrLine: {'line': b'   56 | void ExpResetMcl2::goalResponseCallback(const GoalHandleWallTracking::SharedPtr \x1b[01;31m\x1b[K&\x1b[m\x1b[K goal_handle)\n'}
+[6.059924] (emcl2) StderrLine: {'line': b'      |                                                                                 \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.060087] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:56:80:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.060254] (emcl2) StderrLine: {'line': b'   56 | void ExpResetMcl2::goalResponseCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::SharedPtr\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K goal_handle)\n'}
+[6.060411] (emcl2) StderrLine: {'line': b'      |                                        \x1b[34m\x1b[K~\x1b[m\x1b[K                                       \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[6.060561] (emcl2) StderrLine: {'line': b'      |                                                                                \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.060714] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:56:83:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected initializer before \xe2\x80\x98\x1b[01m\x1b[Kgoal_handle\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.060880] (emcl2) StderrLine: {'line': b'   56 | void ExpResetMcl2::goalResponseCallback(const GoalHandleWallTracking::SharedPtr & \x1b[01;31m\x1b[Kgoal_handle\x1b[m\x1b[K)\n'}
+[6.061042] (emcl2) StderrLine: {'line': b'      |                                                                                   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.061193] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:64:6:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kvariable or field \xe2\x80\x98\x1b[01m\x1b[KfeedbackCallback\x1b[m\x1b[K\xe2\x80\x99 declared void\n'}
+[6.061358] (emcl2) StderrLine: {'line': b'   64 | void \x1b[01;31m\x1b[KExpResetMcl2\x1b[m\x1b[K::feedbackCallback(\n'}
+[6.061505] (emcl2) StderrLine: {'line': b'      |      \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.061651] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:65:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before \xe2\x80\x98\x1b[01m\x1b[K[\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.061797] (emcl2) StderrLine: {'line': b'   65 |         [\x1b[01;31m\x1b[K[\x1b[m\x1b[Kmaybe_unused]] typename GoalHandleWallTracking::SharedPtr,\n'}
+[6.061961] (emcl2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.062110] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:65:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[6.062257] (emcl2) StderrLine: {'line': b'   65 |         [[maybe_unused]] typename \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::SharedPtr,\n'}
+[6.062401] (emcl2) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.062544] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:65:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktype-specifier invalid in lambda\n'}
+[6.062692] (emcl2) StderrLine: {'line': b'   65 |         [[maybe_unused]] \x1b[01;31m\x1b[Ktypename\x1b[m\x1b[K GoalHandleWallTracking::SharedPtr,\n'}
+[6.062856] (emcl2) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[6.063020] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:65:26:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kparameter declaration before lambda declaration specifiers only optional with \xe2\x80\x98\x1b[01m\x1b[K-std=c++2b\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++2b\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.063172] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[6.063332] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:65:68:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K,\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.063484] (emcl2) StderrLine: {'line': b'   65 |         [[maybe_unused]] typename GoalHandleWallTracking::SharedPtr\x1b[01;31m\x1b[K,\x1b[m\x1b[K\n'}
+[6.063645] (emcl2) StderrLine: {'line': b'      |                                                                    \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.063789] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K At global scope:\n'}
+[6.063954] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:66:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected identifier before \xe2\x80\x98\x1b[01m\x1b[K[\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.064108] (emcl2) StderrLine: {'line': b'   66 |         [\x1b[01;31m\x1b[K[\x1b[m\x1b[Kmaybe_unused]] const std::shared_ptr<const typename WallTrackingAction::Feedback> feedback)\n'}
+[6.064252] (emcl2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.064398] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[6.064543] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:66:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.064692] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]] \x1b[01;31m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<const typename WallTrackingAction::Feedback> feedback)\n'}
+[6.064842] (emcl2) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[6.065008] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K At global scope:\n'}
+[6.065155] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:66:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kconst\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.065324] (emcl2) StderrLine: {'line': b'   66 |         [[maybe_unused]]\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[Kconst\x1b[m\x1b[K std::shared_ptr<const typename WallTrackingAction::Feedback> feedback)\n'}
+[6.065465] (emcl2) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~~~~\x1b[m\x1b[K\n'}
+[6.065601] (emcl2) StderrLine: {'line': b'      |                         \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.065740] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:64:36:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K(\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.065899] (emcl2) StderrLine: {'line': b'   64 | void ExpResetMcl2::feedbackCallback\x1b[01;36m\x1b[K(\x1b[m\x1b[K\n'}
+[6.066044] (emcl2) StderrLine: {'line': b'      |                                    \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[6.067836] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:84:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[6.068067] (emcl2) StderrLine: {'line': b'   84 | void ExpResetMcl2::resultCallback(const \x1b[01;31m\x1b[KGoalHandleWallTracking\x1b[m\x1b[K::WrappedResult & result)\n'}
+[6.068221] (emcl2) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.068364] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:84:79:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.068509] (emcl2) StderrLine: {'line': b'   84 | void ExpResetMcl2::resultCallback(const GoalHandleWallTracking::WrappedResult \x1b[01;31m\x1b[K&\x1b[m\x1b[K result)\n'}
+[6.068665] (emcl2) StderrLine: {'line': b'      |                                                                               \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.068804] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:84:78:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K&\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[6.068973] (emcl2) StderrLine: {'line': b'   84 | void ExpResetMcl2::resultCallback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst GoalHandleWallTracking::WrappedResult\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[K&\x1b[m\x1b[K result)\n'}
+[6.069116] (emcl2) StderrLine: {'line': b'      |                                  \x1b[34m\x1b[K~\x1b[m\x1b[K                                           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[6.069258] (emcl2) StderrLine: {'line': b'      |                                                                              \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[6.069400] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:84:81:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected initializer before \xe2\x80\x98\x1b[01m\x1b[Kresult\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.069542] (emcl2) StderrLine: {'line': b'   84 | void ExpResetMcl2::resultCallback(const GoalHandleWallTracking::WrappedResult & \x1b[01;31m\x1b[Kresult\x1b[m\x1b[K)\n'}
+[6.069684] (emcl2) StderrLine: {'line': b'      |                                                                                 \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[6.080759] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid emcl2::ExpResetMcl2::sendWTGoal()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.081052] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:199:13:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwt_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[6.081221] (emcl2) StderrLine: {'line': b'  199 |         if(!\x1b[01;31m\x1b[Kwt_client_\x1b[m\x1b[K->wait_for_action_server()){\n'}
+[6.081361] (emcl2) StderrLine: {'line': b'      |             \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.081497] (emcl2) StderrLine: {'line': b'      |             \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[6.081752] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:203:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[6.081924] (emcl2) StderrLine: {'line': b'  203 |         auto goal_msg = \x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K::Goal();\n'}
+[6.082057] (emcl2) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.092381] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:205:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kwt_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[6.092651] (emcl2) StderrLine: {'line': b'  205 |         \x1b[01;31m\x1b[Kwt_client_\x1b[m\x1b[K->async_send_goal(goal_msg, send_goal_options_);\n'}
+[6.092796] (emcl2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.092938] (emcl2) StderrLine: {'line': b'      |         \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[6.105575] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:205:47:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksend_goal_options_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KSendGoalOptions\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[6.105882] (emcl2) StderrLine: {'line': b'  205 |         wt_client_->async_send_goal(goal_msg, \x1b[01;31m\x1b[Ksend_goal_options_\x1b[m\x1b[K);\n'}
+[6.106040] (emcl2) StderrLine: {'line': b'      |                                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.106180] (emcl2) StderrLine: {'line': b'      |                                               \x1b[32m\x1b[KSendGoalOptions\x1b[m\x1b[K\n'}
+[6.124908] (-) TimerEvent: {}
+[6.225300] (-) TimerEvent: {}
+[6.325705] (-) TimerEvent: {}
+[6.426095] (-) TimerEvent: {}
+[6.526480] (-) TimerEvent: {}
+[6.626862] (-) TimerEvent: {}
+[6.633498] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid emcl2::EMcl2Node::initPF()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.633805] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:152:27:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KWallTrackingAction\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.633996] (emcl2) StderrLine: {'line': b'  152 |     rclcpp_action::Client<\x1b[01;31m\x1b[KWallTrackingAction\x1b[m\x1b[K>::SharedPtr client_ptr;\n'}
+[6.634147] (emcl2) StderrLine: {'line': b'      |                           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.634295] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:152:45:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[6.634432] (emcl2) StderrLine: {'line': b'  152 |     rclcpp_action::Client<WallTrackingAction\x1b[01;31m\x1b[K>\x1b[m\x1b[K::SharedPtr client_ptr;\n'}
+[6.634570] (emcl2) StderrLine: {'line': b'      |                                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[6.634701] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:152:58:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected initializer before \xe2\x80\x98\x1b[01m\x1b[Kclient_ptr\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.634838] (emcl2) StderrLine: {'line': b'  152 |     rclcpp_action::Client<WallTrackingAction>::SharedPtr \x1b[01;31m\x1b[Kclient_ptr\x1b[m\x1b[K;\n'}
+[6.634984] (emcl2) StderrLine: {'line': b'      |                                                          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.648827] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:153:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclient_ptr\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[6.649383] (emcl2) StderrLine: {'line': b'  153 |     \x1b[01;31m\x1b[Kclient_ptr\x1b[m\x1b[K = rclcpp_action::create_client<WallTrackingAction>(this, "wall_tracking");\n'}
+[6.649558] (emcl2) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.649707] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:153:66:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kcreate_client<WallTrackingAction>(emcl2::EMcl2Node*, const char [14])\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.649886] (emcl2) StderrLine: {'line': b'  153 |     client_ptr = \x1b[01;31m\x1b[Krclcpp_action::create_client<WallTrackingAction>(this, "wall_tracking")\x1b[m\x1b[K;\n'}
+[6.650051] (emcl2) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.650200] (emcl2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/rclcpp_action.hpp:38\x1b[m\x1b[K,\n'}
+[6.650368] (emcl2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:12\x1b[m\x1b[K,\n'}
+[6.650510] (emcl2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/emcl2_node.h:8\x1b[m\x1b[K,\n'}
+[6.650650] (emcl2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:5\x1b[m\x1b[K:\n'}
+[6.650785] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ActionT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(rclcpp::node_interfaces::NodeBaseInterface::SharedPtr, rclcpp::node_interfaces::NodeGraphInterface::SharedPtr, rclcpp::node_interfaces::NodeLoggingInterface::SharedPtr, rclcpp::node_interfaces::NodeWaitablesInterface::SharedPtr, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.650979] (emcl2) StderrLine: {'line': b'   44 | \x1b[01;36m\x1b[Kcreate_client\x1b[m\x1b[K(\n'}
+[6.651121] (emcl2) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.651257] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:44:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.651396] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class ActionT, class NodeT> typename rclcpp_action::Client<ActionT>::SharedPtr rclcpp_action::create_client(NodeT, const string&, rclcpp::CallbackGroup::SharedPtr, const rcl_action_client_options_t&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[6.651547] (emcl2) StderrLine: {'line': b'  105 | \x1b[01;36m\x1b[Kcreate_client\x1b[m\x1b[K(\n'}
+[6.651680] (emcl2) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[6.651815] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp_action/rclcpp_action/create_client.hpp:105:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[6.726959] (-) TimerEvent: {}
+[6.827288] (-) TimerEvent: {}
+[6.927638] (-) TimerEvent: {}
+[6.937393] (emcl2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:90: CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 1\n'}
+[6.937619] (emcl2) StderrLine: {'line': b'gmake[2]: *** \xe6\x9c\xaa\xe5\xae\x8c\xe4\xba\x86\xe3\x81\xae\xe3\x82\xb8\xe3\x83\xa7\xe3\x83\x96\xe3\x82\x92\xe5\xbe\x85\xe3\x81\xa3\xe3\x81\xa6\xe3\x81\x84\xe3\x81\xbe\xe3\x81\x99....\n'}
+[7.027776] (-) TimerEvent: {}
+[7.128074] (-) TimerEvent: {}
+[7.228417] (-) TimerEvent: {}
+[7.328751] (-) TimerEvent: {}
+[7.429049] (-) TimerEvent: {}
+[7.529373] (-) TimerEvent: {}
+[7.629703] (-) TimerEvent: {}
+[7.730011] (-) TimerEvent: {}
+[7.830339] (-) TimerEvent: {}
+[7.930664] (-) TimerEvent: {}
+[8.030942] (-) TimerEvent: {}
+[8.131248] (-) TimerEvent: {}
+[8.231554] (-) TimerEvent: {}
+[8.331880] (-) TimerEvent: {}
+[8.432194] (-) TimerEvent: {}
+[8.532510] (-) TimerEvent: {}
+[8.632846] (-) TimerEvent: {}
+[8.733188] (-) TimerEvent: {}
+[8.833525] (-) TimerEvent: {}
+[8.933807] (-) TimerEvent: {}
+[9.034090] (-) TimerEvent: {}
+[9.134413] (-) TimerEvent: {}
+[9.234725] (-) TimerEvent: {}
+[9.335051] (-) TimerEvent: {}
+[9.435386] (-) TimerEvent: {}
+[9.535765] (-) TimerEvent: {}
+[9.636144] (-) TimerEvent: {}
+[9.736484] (-) TimerEvent: {}
+[9.836850] (-) TimerEvent: {}
+[9.937202] (-) TimerEvent: {}
+[10.037578] (-) TimerEvent: {}
+[10.137964] (-) TimerEvent: {}
+[10.238349] (-) TimerEvent: {}
+[10.338699] (-) TimerEvent: {}
+[10.438990] (-) TimerEvent: {}
+[10.539297] (-) TimerEvent: {}
+[10.639625] (-) TimerEvent: {}
+[10.739942] (-) TimerEvent: {}
+[10.840276] (-) TimerEvent: {}
+[10.940593] (-) TimerEvent: {}
+[11.040921] (-) TimerEvent: {}
+[11.141245] (-) TimerEvent: {}
+[11.241579] (-) TimerEvent: {}
+[11.341906] (-) TimerEvent: {}
+[11.442225] (-) TimerEvent: {}
+[11.542560] (-) TimerEvent: {}
+[11.642934] (-) TimerEvent: {}
+[11.743265] (-) TimerEvent: {}
+[11.843586] (-) TimerEvent: {}
+[11.943900] (-) TimerEvent: {}
+[12.044217] (-) TimerEvent: {}
+[12.144527] (-) TimerEvent: {}
+[12.244884] (-) TimerEvent: {}
+[12.345224] (-) TimerEvent: {}
+[12.445567] (-) TimerEvent: {}
+[12.545903] (-) TimerEvent: {}
+[12.646225] (-) TimerEvent: {}
+[12.746545] (-) TimerEvent: {}
+[12.846854] (-) TimerEvent: {}
+[12.947151] (-) TimerEvent: {}
+[13.047455] (-) TimerEvent: {}
+[13.147793] (-) TimerEvent: {}
+[13.248090] (-) TimerEvent: {}
+[13.348402] (-) TimerEvent: {}
+[13.448740] (-) TimerEvent: {}
+[13.549031] (-) TimerEvent: {}
+[13.649372] (-) TimerEvent: {}
+[13.652179] (emcl2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:174: CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 1\n'}
+[13.652599] (emcl2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/emcl2_node.dir/all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[13.652895] (emcl2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[13.655914] (emcl2) CommandEnded: {'returncode': 2}
+[13.671936] (emcl2) JobEnded: {'identifier': 'emcl2', 'rc': 2}
+[13.683894] (-) EventReactorShutdown: {}

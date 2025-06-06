@@ -1,0 +1,87 @@
+[0.000000] (-) TimerEvent: {}
+[0.000130] (emcl2) JobQueued: {'identifier': 'emcl2', 'dependencies': OrderedDict()}
+[0.000169] (emcl2) JobStarted: {'identifier': 'emcl2'}
+[0.011278] (emcl2) JobProgress: {'identifier': 'emcl2', 'progress': 'cmake'}
+[0.012109] (emcl2) JobProgress: {'identifier': 'emcl2', 'progress': 'build'}
+[0.013476] (emcl2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2', '--', '-j8', '-l8'], 'cwd': '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'ja:en'), ('USER', 'shimpei'), ('LC_TIME', 'en_US.UTF-8'), ('RASPICAT2_WS', '/home/shimpei/raspicat2'), ('XDG_SESSION_TYPE', 'wayland'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/shimpei'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/shimpei/ros-tcp-endpoint_ws/src'), ('TERM_PROGRAM_VERSION', '1.100.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('PS1', '\\[\x1b]633;A\x07\\]\\[\\033[01;32m\\]\\u@\\h\\[\\033[01;34m\\] \\w\\[\\033[01;31m\\]$(__git_ps1 "[%s]")\\[\\033[00m\\]\\$\\[\\033[00m\\] \\[\x1b]633;B\x07\\]'), ('LC_MONETARY', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '973'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '1106'), ('BUNDLED_DEBUGPY_PATH', '/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/bundled/libs/debugpy'), ('IM_CONFIG_CHECK_ENV', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '28822'), ('_colcon_cd_root', '/home/shimpei'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/shimpei/gnss_ws/install:/home/shimpei/raspicat2/install:/home/shimpei/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'fcitx'), ('LOGNAME', 'shimpei'), ('JOURNAL_STREAM', '8:15647'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'shimpei'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/shimpei/ros2_ws/install/velodyne_description/share/'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/shimpei/.local/bin:/opt/ros/humble/bin:/home/shimpei/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/bundled/scripts/noConfigScripts:/home/shimpei/.config/Code/User/globalStorage/github.copilot-chat/debugCommand'), ('SESSION_MANAGER', 'local/shimpei:@/tmp/.ICE-unix/1074,unix/shimpei:/tmp/.ICE-unix/1074'), ('INVOCATION_ID', '2ba89df0acd04e5695f13a299e58ddf0'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/shimpei/.vscode/extensions/ms-python.debugpy-2025.8.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-bc2c8cae5bdac384.txt'), ('LANG', 'ja_JP.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('XMODIFIERS', '@im=fcitx'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.0SG062'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-00fb0ebab1.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '123'), ('AMENT_PREFIX_PATH', '/home/shimpei/gnss_ws/install/gnss_launch:/home/shimpei/raspicat2/install/raspicat_speak2:/home/shimpei/raspicat2/install/raspicat_slam:/home/shimpei/raspicat2/install/raspicat_setup_scripts:/home/shimpei/raspicat2/install/raspicat_navigation:/home/shimpei/raspicat2/install/raspicat:/home/shimpei/raspicat2/install/raspicat_bringup:/home/shimpei/raspicat2/install/raspicat_description:/home/shimpei/ros2_ws/install/velodyne_description:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'fcitx'), ('PWD', '/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/build/emcl2'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CLUTTER_IM_MODULE', 'xim'), ('RCUTILS_COLORIZED_OUTPUT', '1'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/shimpei/gnss_ws/install/gnss_launch:/home/shimpei/raspicat2/install/raspicat_speak2:/home/shimpei/raspicat2/install/raspicat_slam:/home/shimpei/raspicat2/install/raspicat_setup_scripts:/home/shimpei/raspicat2/install/raspicat_navigation:/home/shimpei/raspicat2/install/raspicat:/home/shimpei/raspicat2/install/raspicat_bringup:/home/shimpei/raspicat2/install/raspicat_description:/home/shimpei/ros2_ws/install/velodyne_description:/opt/ros/humble'), ('ANDROID_NDK_HOME', '/home/shimpei/unity_ws/src/ros2unityAndroid/android-ndk-r26b-linux')]), 'shell': False}
+[0.075170] (emcl2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target emcl2_node\x1b[0m\n'}
+[0.099228] (-) TimerEvent: {}
+[0.103641] (emcl2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o\x1b[0m\n'}
+[0.103848] (emcl2) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o\x1b[0m\n'}
+[0.104698] (emcl2) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/emcl2_node.dir/src/GnssUtil.cpp.o\x1b[0m\n'}
+[0.199365] (-) TimerEvent: {}
+[0.299674] (-) TimerEvent: {}
+[0.400315] (-) TimerEvent: {}
+[0.500676] (-) TimerEvent: {}
+[0.601029] (-) TimerEvent: {}
+[0.695922] (emcl2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/emcl2_node.h:8\x1b[m\x1b[K,\n'}
+[0.696222] (emcl2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/emcl2_node.cpp:5\x1b[m\x1b[K:\n'}
+[0.696375] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kwall_tracking_msgs/action/wall_tracking.hpp: \xe3\x81\x9d\xe3\x81\xae\xe3\x82\x88\xe3\x81\x86\xe3\x81\xaa\xe3\x83\x95\xe3\x82\xa1\xe3\x82\xa4\xe3\x83\xab\xe3\x82\x84\xe3\x83\x87\xe3\x82\xa3\xe3\x83\xac\xe3\x82\xaf\xe3\x83\x88\xe3\x83\xaa\xe3\x81\xaf\xe3\x81\x82\xe3\x82\x8a\xe3\x81\xbe\xe3\x81\x9b\xe3\x82\x93\n'}
+[0.696515] (emcl2) StderrLine: {'line': b'   13 | #include \x1b[01;31m\x1b[K<wall_tracking_msgs/action/wall_tracking.hpp>\x1b[m\x1b[K\n'}
+[0.696636] (emcl2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.696760] (emcl2) StderrLine: {'line': b'compilation terminated.\n'}
+[0.701142] (-) TimerEvent: {}
+[0.708295] (emcl2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:174: CMakeFiles/emcl2_node.dir/src/emcl2_node.cpp.o] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 1\n'}
+[0.708564] (emcl2) StderrLine: {'line': b'gmake[2]: *** \xe6\x9c\xaa\xe5\xae\x8c\xe4\xba\x86\xe3\x81\xae\xe3\x82\xb8\xe3\x83\xa7\xe3\x83\x96\xe3\x82\x92\xe5\xbe\x85\xe3\x81\xa3\xe3\x81\xa6\xe3\x81\x84\xe3\x81\xbe\xe3\x81\x99....\n'}
+[0.730620] (emcl2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/src/ExpResetMcl2.cpp:4\x1b[m\x1b[K:\n'}
+[0.730853] (emcl2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/shimpei/ros-tcp-endpoint_ws/src/emcl2_ros2/include/emcl2/ExpResetMcl2.h:13:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kwall_tracking_msgs/action/wall_tracking.hpp: \xe3\x81\x9d\xe3\x81\xae\xe3\x82\x88\xe3\x81\x86\xe3\x81\xaa\xe3\x83\x95\xe3\x82\xa1\xe3\x82\xa4\xe3\x83\xab\xe3\x82\x84\xe3\x83\x87\xe3\x82\xa3\xe3\x83\xac\xe3\x82\xaf\xe3\x83\x88\xe3\x83\xaa\xe3\x81\xaf\xe3\x81\x82\xe3\x82\x8a\xe3\x81\xbe\xe3\x81\x9b\xe3\x82\x93\n'}
+[0.730945] (emcl2) StderrLine: {'line': b'   13 | #include \x1b[01;31m\x1b[K<wall_tracking_msgs/action/wall_tracking.hpp>\x1b[m\x1b[K\n'}
+[0.731027] (emcl2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.731104] (emcl2) StderrLine: {'line': b'compilation terminated.\n'}
+[0.737296] (emcl2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/emcl2_node.dir/build.make:90: CMakeFiles/emcl2_node.dir/src/ExpResetMcl2.cpp.o] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 1\n'}
+[0.801286] (-) TimerEvent: {}
+[0.901576] (-) TimerEvent: {}
+[1.001899] (-) TimerEvent: {}
+[1.102230] (-) TimerEvent: {}
+[1.202527] (-) TimerEvent: {}
+[1.303397] (-) TimerEvent: {}
+[1.403856] (-) TimerEvent: {}
+[1.504194] (-) TimerEvent: {}
+[1.604485] (-) TimerEvent: {}
+[1.704813] (-) TimerEvent: {}
+[1.805135] (-) TimerEvent: {}
+[1.905374] (-) TimerEvent: {}
+[2.005709] (-) TimerEvent: {}
+[2.106037] (-) TimerEvent: {}
+[2.206380] (-) TimerEvent: {}
+[2.306712] (-) TimerEvent: {}
+[2.407040] (-) TimerEvent: {}
+[2.507383] (-) TimerEvent: {}
+[2.607710] (-) TimerEvent: {}
+[2.708025] (-) TimerEvent: {}
+[2.808351] (-) TimerEvent: {}
+[2.908703] (-) TimerEvent: {}
+[3.008996] (-) TimerEvent: {}
+[3.109342] (-) TimerEvent: {}
+[3.209690] (-) TimerEvent: {}
+[3.310031] (-) TimerEvent: {}
+[3.410318] (-) TimerEvent: {}
+[3.510637] (-) TimerEvent: {}
+[3.610967] (-) TimerEvent: {}
+[3.711316] (-) TimerEvent: {}
+[3.811665] (-) TimerEvent: {}
+[3.911995] (-) TimerEvent: {}
+[4.012348] (-) TimerEvent: {}
+[4.112674] (-) TimerEvent: {}
+[4.212975] (-) TimerEvent: {}
+[4.313303] (-) TimerEvent: {}
+[4.413649] (-) TimerEvent: {}
+[4.513974] (-) TimerEvent: {}
+[4.614320] (-) TimerEvent: {}
+[4.714702] (-) TimerEvent: {}
+[4.815079] (-) TimerEvent: {}
+[4.915428] (-) TimerEvent: {}
+[5.015828] (-) TimerEvent: {}
+[5.116210] (-) TimerEvent: {}
+[5.216568] (-) TimerEvent: {}
+[5.316891] (-) TimerEvent: {}
+[5.417238] (-) TimerEvent: {}
+[5.517570] (-) TimerEvent: {}
+[5.617928] (-) TimerEvent: {}
+[5.718289] (-) TimerEvent: {}
+[5.818584] (-) TimerEvent: {}
+[5.882351] (emcl2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/emcl2_node.dir/all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[5.882659] (emcl2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] \xe3\x82\xa8\xe3\x83\xa9\xe3\x83\xbc 2\n'}
+[5.885448] (emcl2) CommandEnded: {'returncode': 2}
+[5.897068] (emcl2) JobEnded: {'identifier': 'emcl2', 'rc': 2}
+[5.907689] (-) EventReactorShutdown: {}
