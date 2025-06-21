@@ -47,9 +47,9 @@ void GnssUtil::gnssReset(double alpha, double alpha_th, std::vector<emcl2::Parti
     RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "reset_sigma(x, y) = (%lf, %lf)", gnss_sigma_mx_(0, 0), gnss_sigma_mx_(1, 1));
     for(int i = 0; i < particle_num; ++i)
     {
-        particles[i].p_.x_ = gnss_position_[0] + pfRanGaussian(gnss_sigma_mx_(0, 0));
-        particles[i].p_.y_ = gnss_position_[1] + pfRanGaussian(gnss_sigma_mx_(1, 1));
-        particles[i].p_.t_ = gnss_yaw_ + pfRanGaussian(sqrt(gnss_sigma_mx_(1, 1))); // 修正: 方位の共分散を使用
+        particles[i].p_.x_ = gnss_position_[0] + pfRanGaussian(sqrt(gnss_sigma_mx_(0, 0)));
+        particles[i].p_.y_ = gnss_position_[1] + pfRanGaussian(sqrt(gnss_sigma_mx_(1, 1)));
+        particles[i].p_.t_ = gnss_yaw_ + pfRanGaussian(sqrt(gnss_reset_var_));
     }
 }
 
