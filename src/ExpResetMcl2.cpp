@@ -24,21 +24,20 @@ ExpResetMcl2::ExpResetMcl2(
   rclcpp_action::Client<WallTrackingAction>::SharedPtr wt_client, 
   rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr last_reset_gnss_pos_pub)
 : Mcl::Mcl(p, num, scan, odom_model, map),
-	alpha_threshold_(alpha_th),
-	expansion_radius_position_(expansion_radius_position),
-	expansion_radius_orientation_(expansion_radius_orientation),
-	extraction_rate_(extraction_rate),
-	range_threshold_(range_threshold),
-	sensor_reset_(sensor_reset), 
-	use_gnss_reset_(use_gnss_reset), 
-	use_wall_tracking_(use_wall_tracking),
-	gnss_reset_var_(gnss_reset_var), 
-	kld_th_(kld_th), 
-	pf_var_th_(pf_var_th), 
-	wt_client_(wt_client), 
-	last_reset_gnss_pos_pub_(last_reset_gnss_pos_pub), 
-	first_gnss_reset_(false),
-	gnss_utility_(gnss_utility)
+  alpha_threshold_(alpha_th),
+  expansion_radius_position_(expansion_radius_position),
+  expansion_radius_orientation_(expansion_radius_orientation),
+  extraction_rate_(extraction_rate),
+  range_threshold_(range_threshold),
+  sensor_reset_(sensor_reset), 
+  use_gnss_reset_(use_gnss_reset), 
+  use_wall_tracking_(use_wall_tracking),
+  gnss_reset_var_(gnss_reset_var), 
+  kld_th_(kld_th), 
+  pf_var_th_(pf_var_th), 
+  wt_client_(wt_client), 
+  last_reset_gnss_pos_pub_(last_reset_gnss_pos_pub), 
+  gnss_utility_(gnss_utility)
 {
 	// RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), 
 	// "use_gnss_reset: %d, use_wall_tracking: %d, sqrt(gnss_reset_var): %lf, kld_th: %lf, pf_var_th: %lf", 
@@ -80,7 +79,6 @@ void ExpResetMcl2::feedbackCallback(
 		wall_tracking_start_ = false;
 		last_reset_gnss_pos_pub_->publish(last_reset_gnss_pos_);
 		exec_reset_aft_wt_ = false;
-		first_gnss_reset_ = false;
 	}
 }
 void ExpResetMcl2::resultCallback(const GoalHandleWallTracking::WrappedResult & result)
@@ -127,29 +125,19 @@ void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, 
 		p.w_ *= p.likelihood(map_.get(), scan);
 	}
 
+	// RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "N0.0 particle weight is %lf. Sum weight is %lf.", particles_[0].w_, sum_w);
 	alpha_ = nonPenetrationRate(static_cast<int>(particles_.size() * extraction_rate_), map_.get(), scan);
+	// RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "alpha: %lf", alpha_);
 
-	// GNSSリセット→10秒後もalphaが回復しなければwalltracking
 	if (alpha_ < alpha_threshold_) {
-		if (!gnss_reset_pending_ && use_gnss_reset_) {
-			gnssResetAndExpReset(scan);
-			last_gnss_reset_time_ = rclcpp::Clock().now();
-			gnss_reset_pending_ = true;
-		} else if (gnss_reset_pending_) {
-			auto now = rclcpp::Clock().now();
-			if ((now - last_gnss_reset_time_).seconds() > 5.0) {
-				if (alpha_ < alpha_threshold_ && use_wall_tracking_) {
-					resetUseWallTracking(scan);
-					gnss_reset_pending_ = false;
-				}
-			}
-		} else if (!use_gnss_reset_ && use_wall_tracking_) {
+		bool gnss_info_rel_is_low = tooFar() || gnss_utility_.isNAN();
+		if(use_wall_tracking_ && gnss_info_rel_is_low){
 			resetUseWallTracking(scan);
+		} else if(use_gnss_reset_){
+			gnssResetAndExpReset(scan);
 		} else {
 			expResetWithLLCalc(scan);
 		}
-	} else {
-		gnss_reset_pending_ = false;
 	}
 
 	if (normalizeBelief() > 0.000001) {
@@ -195,11 +183,6 @@ double ExpResetMcl2::euclideanDistanceFromLastResetPos()
 void ExpResetMcl2::resetUseWallTracking(Scan & scan)
 {
 	if(!wall_tracking_start_) sendWTGoal();
-	if(first_gnss_reset_ == false){
-		// RCLCPP_INFO(rclcpp::get_logger("emcl2"), "First GNSS RESET");
-		gnssResetWithLLCalc(scan);
-		first_gnss_reset_ = true;
-	}
 	if(should_gnss_reset_){
 		// RCLCPP_INFO(rclcpp::get_logger("emcl2"), "Should GNSS Reset");
 		exec_reset_aft_wt_ = true;

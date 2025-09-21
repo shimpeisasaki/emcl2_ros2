@@ -38,10 +38,7 @@ class ExpResetMcl2 : public Mcl
 	void setGnssPose(const geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr msg);
 	void setPfPose(double x, double y, double x_var, double y_var);
 
-		private:
-	rclcpp::Time last_gnss_reset_time_;
-	bool gnss_reset_pending_ = false;
-
+      private:
 	double alpha_threshold_;
 	double expansion_radius_position_;
 	double expansion_radius_orientation_;
@@ -64,10 +61,10 @@ class ExpResetMcl2 : public Mcl
 	rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr last_reset_gnss_pos_pub_;
 
 	void goalResponseCallback(const GoalHandleWallTracking::SharedPtr & goal_handle);
-	void feedbackCallback(
-		[[maybe_unused]] typename GoalHandleWallTracking::SharedPtr, 
-		[[maybe_unused]] const std::shared_ptr<const typename WallTrackingAction::Feedback> feedback);
-	void resultCallback(const GoalHandleWallTracking::WrappedResult & result);
+    void feedbackCallback(
+        [[maybe_unused]] typename GoalHandleWallTracking::SharedPtr, 
+        [[maybe_unused]] const std::shared_ptr<const typename WallTrackingAction::Feedback> feedback);
+    void resultCallback(const GoalHandleWallTracking::WrappedResult & result);
 
 	void expansionReset(void);
 	double nonPenetrationRate(int skip, LikelihoodFieldMap * map, Scan & scan);
@@ -80,7 +77,6 @@ class ExpResetMcl2 : public Mcl
 	void gnssResetAndExpReset(Scan & scan);
 	void sendWTGoal();
 
-	bool first_gnss_reset_;
 	GnssUtil gnss_utility_;
 };
 
