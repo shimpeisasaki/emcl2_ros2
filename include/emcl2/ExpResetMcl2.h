@@ -19,9 +19,16 @@ using GoalHandleWallTracking = rclcpp_action::ClientGoalHandle<WallTrackingActio
 
 namespace emcl2
 {
-class ExpResetMcl2 : public Mcl
+class ExpResetMcl2 : public Mcl::Mcl
 {
-      public:
+public:
+    enum class GnssResetResult {
+        Success,
+        Waiting,
+        Skipped,
+        Failure
+    };
+
 	ExpResetMcl2(
 	  const Pose & p, int num, const Scan & scan, const std::shared_ptr<OdomModel> & odom_model,
 	  const std::shared_ptr<LikelihoodFieldMap> & map, double alpha_th,
@@ -37,6 +44,7 @@ class ExpResetMcl2 : public Mcl
 
 	void setGnssPose(const geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr msg);
 	void setPfPose(double x, double y, double x_var, double y_var);
+	bool isGnssResetHoldActive() const;
 
       private:
 	double alpha_threshold_;
@@ -59,6 +67,7 @@ class ExpResetMcl2 : public Mcl
 	rclcpp_action::Client<WallTrackingAction>::SendGoalOptions send_goal_options_;
 	geometry_msgs::msg::PointStamped last_reset_gnss_pos_;
 	rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr last_reset_gnss_pos_pub_;
+    bool gnss_reset_hold_active_;
 
 	void goalResponseCallback(const GoalHandleWallTracking::SharedPtr & goal_handle);
     void feedbackCallback(
@@ -74,10 +83,16 @@ class ExpResetMcl2 : public Mcl
 	double euclideanDistanceFromLastResetPos();
 	void gnssResetWithLLCalc(Scan & scan);
 	void expResetWithLLCalc(Scan & scan);
-	void gnssResetAndExpReset(Scan & scan);
+	GnssResetResult gnssResetAndExpReset(Scan & scan, bool gnss_info_unreliable = false);
 	void sendWTGoal();
 
 	GnssUtil gnss_utility_;
+
+    void resetGnssWaitState();
+    rclcpp::Clock steady_clock_;
+    rclcpp::Time gnss_reset_wait_start_;
+    double gnss_reset_wait_duration_sec_;
+    bool gnss_reset_waiting_;
 };
 
 }  // namespace emcl2

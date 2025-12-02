@@ -4,6 +4,7 @@
 #include "emcl2/ExpResetMcl2.h"
 
 #include <rclcpp/rclcpp.hpp>
+#include <chrono>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2/utils.h>
 
@@ -35,9 +36,10 @@ ExpResetMcl2::ExpResetMcl2(
   gnss_reset_var_(gnss_reset_var), 
   kld_th_(kld_th), 
   pf_var_th_(pf_var_th), 
-  wt_client_(wt_client), 
-  last_reset_gnss_pos_pub_(last_reset_gnss_pos_pub), 
-  gnss_utility_(gnss_utility)
+	wt_client_(wt_client), 
+	last_reset_gnss_pos_pub_(last_reset_gnss_pos_pub), 
+	gnss_reset_hold_active_(false),
+	gnss_utility_(gnss_utility)
 {
 	// RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), 
 	// "use_gnss_reset: %d, use_wall_tracking: %d, sqrt(gnss_reset_var): %lf, kld_th: %lf, pf_var_th: %lf", 
@@ -130,13 +132,27 @@ void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, 
 	// RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "alpha: %lf", alpha_);
 
 	if (alpha_ < alpha_threshold_) {
-		bool gnss_info_rel_is_low = tooFar() || gnss_utility_.isNAN();
-		if(use_wall_tracking_ && gnss_info_rel_is_low){
-			resetUseWallTracking(scan);
-		} else if(use_gnss_reset_){
-			gnssResetAndExpReset(scan);
-		} else {
+		bool gnss_info_unreliable = tooFar() || gnss_utility_.isNAN();
+		bool primary_reset_succeeded = false;
+		GnssResetResult gnss_result = GnssResetResult::Skipped;
+
+		if (use_gnss_reset_) {
+			gnss_result = gnssResetAndExpReset(scan, gnss_info_unreliable);
+			primary_reset_succeeded = (gnss_result == GnssResetResult::Success);
+		}
+
+		if (!use_gnss_reset_ || !primary_reset_succeeded) {
 			expResetWithLLCalc(scan);
+		}
+
+		alpha_ = nonPenetrationRate(static_cast<int>(particles_.size() * extraction_rate_), map_.get(), scan);
+		if (alpha_ < alpha_threshold_) {
+			if (use_wall_tracking_) {
+				resetUseWallTracking(scan);
+			} else {
+				expResetWithLLCalc(scan);
+				alpha_ = nonPenetrationRate(static_cast<int>(particles_.size() * extraction_rate_), map_.get(), scan);
+			}
 		}
 	}
 
@@ -190,7 +206,7 @@ void ExpResetMcl2::resetUseWallTracking(Scan & scan)
 		should_gnss_reset_ = false;
 	} else if(open_place_arrived_){
 		gnssResetAndExpReset(scan);
-		exec_reset_aft_wt_ = true;	
+		exec_reset_aft_wt_ = true;
 	}
 }
 
@@ -224,6 +240,7 @@ void ExpResetMcl2::expansionReset(void)
 
 void ExpResetMcl2::expResetWithLLCalc(Scan & scan)
 {
+	rclcpp::sleep_for(std::chrono::seconds(10));
 	RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "EXPANSION RESET");
 	expansionReset();
 	for (auto & p : particles_) {
@@ -242,17 +259,37 @@ void ExpResetMcl2::gnssResetWithLLCalc(Scan & scan)
 	// should_gnss_reset_ = false;
 }
 
-void ExpResetMcl2::gnssResetAndExpReset(Scan & scan)
+ExpResetMcl2::GnssResetResult ExpResetMcl2::gnssResetAndExpReset(Scan & scan, bool gnss_info_unreliable)
 {
+    if (gnss_info_unreliable) {
+        RCLCPP_WARN(rclcpp::get_logger("emcl2_node"), "Skip GNSS reset: GNSS information is unreliable");
+        return GnssResetResult::Failure;
+    }
+
+    if (gnss_utility_.isNAN()) {
+        RCLCPP_WARN(rclcpp::get_logger("emcl2_node"), "Skip GNSS reset: GNSS position contains NaN");
+        return GnssResetResult::Failure;
+    }
+
 	double kld = gnss_utility_.kld();
+    if (std::isnan(kld)) {
+        RCLCPP_WARN(rclcpp::get_logger("emcl2_node"), "Skip GNSS reset: KLD calculation returned NaN");
+        return GnssResetResult::Failure;
+    }
+
 	RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), 
 				"kld / kld_th: %lf / %lf, (x_var, y_var) / var_th: (%lf, %lf) / %lf", 
 				kld, kld_th_, gnss_utility_.pf_sigma_mx_(0, 0), gnss_utility_.pf_sigma_mx_(1, 1), pf_var_th_);
 	bool kld_cond = kld < kld_th_;
 	bool var_cond = gnss_utility_.pf_sigma_mx_(0, 0) < pf_var_th_ && gnss_utility_.pf_sigma_mx_(1, 1) < pf_var_th_;
 	bool er_cond = kld_cond || var_cond;
-	if(er_cond)	expResetWithLLCalc(scan);
-	else gnssResetWithLLCalc(scan);
+	if(er_cond) {
+		expResetWithLLCalc(scan);
+	} else {
+		gnssResetWithLLCalc(scan);
+	}
+
+	return GnssResetResult::Success;
 }
 
 void ExpResetMcl2::setGnssPose(const geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr msg)
@@ -271,6 +308,11 @@ void ExpResetMcl2::setPfPose(double x, double y, double x_var, double y_var)
 							   0., y_var;
 	// gnss_utility_.pf_x_var_ = x_var;
 	// gnss_utility_.pf_y_var_ = y_var;
+}
+
+bool ExpResetMcl2::isGnssResetHoldActive() const
+{
+	return gnss_reset_hold_active_;
 }
 
 }  // namespace emcl2

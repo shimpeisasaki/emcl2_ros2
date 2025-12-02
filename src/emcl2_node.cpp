@@ -261,7 +261,11 @@ void EMcl2Node::loop(void)
 			RCLCPP_INFO(get_logger(), "can't get odometry info");
 			return;
 		}
-		pf_->motionUpdate(x, y, t);
+		if (!pf_->isGnssResetHoldActive()) {
+			pf_->motionUpdate(x, y, t);
+		} else {
+			RCLCPP_DEBUG(get_logger(), "Motion update skipped: GNSS reset hold active");
+		}
 
 		double lx, ly, lt;
 		bool inv;
