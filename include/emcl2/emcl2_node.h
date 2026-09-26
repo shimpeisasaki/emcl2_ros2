@@ -51,6 +51,7 @@ class EMcl2Node : public rclcpp::Node
 	// ros::ServiceServer global_loc_srv_;
 	rclcpp::Service<std_srvs::srv::Empty>::SharedPtr global_loc_srv_;
 	rclcpp::Time scan_time_stamp_;
+	double scan_max_age_;
 
 	std::string footprint_frame_id_;
 	std::string global_frame_id_;
