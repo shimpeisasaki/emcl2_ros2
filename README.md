@@ -12,6 +12,17 @@ This package is ROS 2 version of [ryuichiueda/emcl2](https://github.com/ryuichiu
 
 ## quick start
 
+### Scan freshness
+
+`scan` uses Best Effort / volatile QoS with a queue depth of 2. The
+`scan_max_age` parameter (default: 0.3 seconds) limits age from the first
+ray timestamp, including scan acquisition time. Old, duplicate, out-of-order,
+zero-stamped, more than 0.1 seconds future-stamped, empty-frame, or scans without
+any finite in-range return are rejected. Cached scans are not used for updates
+after this age limit. Fresh scans resume localization automatically, not driving.
+Use consistent ROS clocks (`use_sim_time` for replay); restart after a backward
+clock jump. An independent driving watchdog must stop the robot on sensor loss.
+
 ### Install & Build
 ```
 mkdir ros2_ws && cd ros2_ws

@@ -24,6 +24,9 @@
 #include <tf2_ros/transform_listener.h>
 
 #include <memory>
+#include <algorithm>
+#include <cmath>
+#include <stdexcept>
 #include <type_traits>
 #include <utility>
 
@@ -45,12 +48,17 @@ EMcl2Node::~EMcl2Node() {}
 
 void EMcl2Node::initCommunication(void)
 {
+	scan_max_age_ = declare_parameter("scan_max_age", 0.3);
+	if (!std::isfinite(scan_max_age_) || scan_max_age_ <= 0.0) {
+		throw std::invalid_argument("scan_max_age must be finite and positive");
+	}
 	particlecloud_pub_ = create_publisher<geometry_msgs::msg::PoseArray>("particlecloud", 2);
 	pose_pub_ = create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("mcl_pose", 2);
 	alpha_pub_ = create_publisher<std_msgs::msg::Float32>("alpha", 2);
 
 	laser_scan_sub_ = create_subscription<sensor_msgs::msg::LaserScan>(
-	  "scan", 2, std::bind(&EMcl2Node::cbScan, this, std::placeholders::_1));
+	  "scan", rclcpp::SensorDataQoS().keep_last(2),
+	  std::bind(&EMcl2Node::cbScan, this, std::placeholders::_1));
 	initial_pose_sub_ = create_subscription<geometry_msgs::msg::PoseWithCovarianceStamped>(
 	  "initialpose", 2,
 	  std::bind(&EMcl2Node::initialPoseReceived, this, std::placeholders::_1));
@@ -219,6 +227,19 @@ void EMcl2Node::receiveMap(const nav_msgs::msg::OccupancyGrid::ConstSharedPtr ms
 
 void EMcl2Node::cbScan(const sensor_msgs::msg::LaserScan::ConstSharedPtr msg)
 {
+	const rclcpp::Time stamp(msg->header.stamp, get_clock()->get_clock_type());
+	const double age = (now() - stamp).seconds();
+	const bool has_return = std::any_of(msg->ranges.begin(), msg->ranges.end(),
+	  [&msg](float r) {
+		return std::isfinite(r) && r >= msg->range_min && r <= msg->range_max;
+	  });
+	if (stamp.nanoseconds() <= 0 || age < -0.1 || age > scan_max_age_ ||
+	    (scan_receive_ && stamp.nanoseconds() <= scan_time_stamp_.nanoseconds()) ||
+	    msg->header.frame_id.empty() || !has_return) {
+		RCLCPP_WARN_THROTTLE(get_logger(), *get_clock(), 2000,
+		  "Ignoring stale/future/out-of-order/invalid scan (age %.3f s)", age);
+		return;
+	}
 	if (init_pf_) {
 		scan_receive_ = true;
 		scan_time_stamp_ = msg->header.stamp;
@@ -265,6 +286,11 @@ void EMcl2Node::initialPoseReceived(
 
 void EMcl2Node::loop(void)
 {
+	// Do not continue using a cached scan after sensor interruption.
+	const double scan_age = now().seconds() - scan_time_stamp_.seconds();
+	if (!scan_receive_ || scan_age < -0.1 || scan_age > scan_max_age_) {
+		return;
+	}
 	if (init_request_) {
 		pf_->initialize(init_x_, init_y_, init_t_);
 		init_request_ = false;
