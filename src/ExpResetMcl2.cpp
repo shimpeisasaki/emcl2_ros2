@@ -8,7 +8,6 @@
 #include <stdlib.h>
 
 #include <cmath>
-#include <iostream>
 
 namespace emcl2
 {
@@ -56,9 +55,9 @@ void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, 
 	}
 
 	alpha_ = nonPenetrationRate(static_cast<int>(particles_.size() * extraction_rate_), map_.get(), scan);
-	RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "ALPHA: %f / %f", alpha_, alpha_threshold_);
+	RCLCPP_DEBUG(rclcpp::get_logger("emcl2_node"), "ALPHA: %f / %f", alpha_, alpha_threshold_);
 	if (alpha_ < alpha_threshold_) {
-		RCLCPP_INFO(rclcpp::get_logger("emcl2_node"), "RESET");
+		RCLCPP_DEBUG(rclcpp::get_logger("emcl2_node"), "RESET");
 		expansionReset();
 		for (auto & p : particles_) {
 			p.w_ *= p.likelihood(map_.get(), scan);
@@ -87,7 +86,7 @@ double ExpResetMcl2::nonPenetrationRate(int skip, LikelihoodFieldMap * map, Scan
 	}
 	shift++;
 
-	std::cout << penetrating << " " << counter << std::endl;
+	RCLCPP_DEBUG(rclcpp::get_logger("emcl2_node"), "Wall conflicts: %d / %d", penetrating, counter);
 	return static_cast<double>((counter - penetrating)) / counter;
 }
 
