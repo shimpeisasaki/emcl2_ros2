@@ -23,6 +23,7 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/transform_listener.h>
 
+#include <cstdint>
 #include <memory>
 #include <string>
 
@@ -51,6 +52,7 @@ class EMcl2Node : public rclcpp::Node
 	// ros::ServiceServer global_loc_srv_;
 	rclcpp::Service<std_srvs::srv::Empty>::SharedPtr global_loc_srv_;
 	rclcpp::Time scan_time_stamp_;
+	std::int64_t last_sensor_update_scan_ns_ = 0;
 	double scan_max_age_;
 
 	std::string footprint_frame_id_;

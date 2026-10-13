@@ -258,9 +258,11 @@ void EMcl2Node::loop(void)
 	}
 	if (init_request_) {
 		pf_->initialize(init_x_, init_y_, init_t_);
+		last_sensor_update_scan_ns_ = 0;
 		init_request_ = false;
 	} else if (simple_reset_request_) {
 		pf_->simpleReset();
+		last_sensor_update_scan_ns_ = 0;
 		simple_reset_request_ = false;
 	}
 
@@ -279,7 +281,10 @@ void EMcl2Node::loop(void)
 			return;
 		}
 
-		pf_->sensorUpdate(lx, ly, lt, inv);
+		if (scan_time_stamp_.nanoseconds() != last_sensor_update_scan_ns_) {
+			pf_->sensorUpdate(lx, ly, lt, inv);
+			last_sensor_update_scan_ns_ = scan_time_stamp_.nanoseconds();
+		}
 
 		double x_var, y_var, t_var, xy_cov, yt_cov, tx_cov;
 		pf_->meanPose(x, y, t, x_var, y_var, t_var, xy_cov, yt_cov, tx_cov);
