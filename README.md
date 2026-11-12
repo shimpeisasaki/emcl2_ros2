@@ -1,5 +1,8 @@
 # emcl2_ros2: mcl with expansion resetting (version 2)
 
+Workspace maintainers: see [local maintenance and adopted references](LOCAL_MAINTENANCE.md)
+before changing this upstream-derived package or running its simulation demos.
+
 [![test](https://github.com/CIT-Autonomous-Robot-Lab/emcl2_ros2/actions/workflows/test.yml/badge.svg)](https://github.com/CIT-Autonomous-Robot-Lab/emcl2_ros2/actions/workflows/test.yml)
 
 Emcl is an alternative Monte Carlo localization (MCL) package to amcl (http://wiki.ros.org/amcl). Differently from amcl, KLD-sampling and adaptive MCL are not implemented. Instead, the expansion resetting and other features are implemented[^1][^2].
@@ -42,7 +45,7 @@ You may wait Gazebo to be initilalized. You can also use `./test/demo.bash`, in 
 export TURTLEBOT3_MODEL=burger
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ros2 launch nav2_bringup rviz_launch.py
-ros2 launch emcl2 emcl2.launch.py params_file:=$(ros2 pkg prefix --share emcl2)/config/emcl2_quick_start.param.yaml map:=$(ros2 pkg prefix --share nav2_bringup)/maps/turtlebot3_world.yaml use_sim_time:=true
+ros2 launch emcl2 emcl2.launch.py params_file:=$(ros2 pkg prefix --share emcl2)/config/emcl2.param.yaml map:=$(ros2 pkg prefix --share nav2_bringup)/maps/turtlebot3_world.yaml use_sim_time:=true
 ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
 
