@@ -1,0 +1,13 @@
+std_msgs/Header header
+uint8 RUNNING=0
+uint8 SUCCEEDED=1
+uint8 FAILED=2
+uint8 TIMED_OUT=3
+string request_id
+string attempt_id
+uint8 state
+builtin_interfaces/Time started_at
+builtin_interfaces/Time finished_at
+builtin_interfaces/Time gnss_source_stamp
+bool particles_replaced
+string reason
