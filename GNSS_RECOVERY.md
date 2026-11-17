@@ -5,6 +5,24 @@ It does not navigate, stop the vehicle, select candidates, decide where to retry
 GNSS reception/RTK quality belongs to ublox_dgnss. The caller decides whether quality
 has held long enough. emcl2 defensively checks position validity, frame, covariance and freshness.
 
+## Connections and ownership
+
+```mermaid
+flowchart LR
+    U[ublox output] -->|gnss/fix| G[gnss2map]
+    G -->|gnss/map_pose| E[emcl2]
+    U -->|gnss/status| R[Robot supervisor]
+    E -->|localization/status| R
+    R -->|localization/request_gnss_reset service| E
+    E -->|localization/gnss_reset_status| R
+```
+
+GNSS status/quality is reported by ublox, not emcl2. emcl2 subscribes to calibrated
+position; the robot supervisor decides when to request recovery. The diagram describes
+integration endpoints; this change does not implement that supervisor.
+See [ublox status](../ublox_dgnss/docs/gnss_output_contract.md#受信状況品質status互換launchでは-gnssstatus),
+[conversion](../gnss2map/README.md), and [launch integration](../cat_robot/cat_navigation/README.md#要求型gnss自己位置リセットの接続).
+
 ## Public interfaces
 
 All names below are relative ROS names, so a namespace/remap applies normally.
@@ -18,6 +36,9 @@ All names below are relative ROS names, so a namespace/remap applies normally.
 
 `emcl2_msgs` is a separate sibling repository/package (`src/emcl2_msgs`) to preserve
 normal colcon package discovery without restructuring upstream emcl2.
+The exact fields/constants are in [LocalizationStatus.msg](../emcl2_msgs/msg/LocalizationStatus.msg),
+[RequestGnssReset.srv](../emcl2_msgs/srv/RequestGnssReset.srv), and
+[GnssResetStatus.msg](../emcl2_msgs/msg/GnssResetStatus.msg).
 Do not infer health from message arrival alone. `header.stamp` is publication time;
 `scan_stamp` is the last evaluated observation. `instance_id` distinguishes process
 restarts and `transition_id` increments on state changes. A late subscriber receives
@@ -55,6 +76,15 @@ Headings are uniform [-pi,pi); each heading corrects the base-to-antenna XY leve
 Input orientation is ignored. Planar mounting/attitude is assumed; this is not a 3D
 roll/pitch lever-arm model. No fixed forward direction is fabricated.
 
+The cat_navigation launch sets `gnss_antenna_frame` to `gnss_antenna_link`.
+The authoritative mounting position is the [cat_robot URDF](../cat_robot/cat_bringup/urdf/experiment_robot.urdf.xacro),
+not a second numeric offset in this package. emcl2 looks up
+`base_frame_id <- gnss_antenna_frame` at the scan time and subtracts the rotated XY
+offset for each sampled heading. Missing TF rejects acceptance or delays pending
+injection. Flat planar motion is the adopted robot assumption; Z/roll/pitch correction
+is not applied. gnss2map must continue publishing antenna position so this correction
+is applied exactly once.
+
 After injection, existing LiDAR updates/expansion resetting continue until sustained
 consistency yields SUCCEEDED or a steady-clock deadline yields TIMED_OUT. The injection
 scan cannot count as recovery evidence. GNSS expiry after acceptance delays injection
@@ -69,21 +99,31 @@ current sensor availability state. Failure does not restore old particle coordin
 `gnss_max_age` defaults to 1 s and is enforced using both ROS source time and monotonic
 receipt age. Zero/future/out-of-order stamps, wrong map frame, nonfinite XY and invalid
 XY covariance are rejected. A clock jump never makes old measurements fresh; restart
-or a later valid timestamp may be required. No buffering across reset/map generations.
+or a later valid timestamp may be required. The latest valid GNSS input is cached until
+expiry and is not cleared by map replacement. When changing map/calibration, restart
+or reconfigure the conversion/localization pipeline together before issuing requests;
+a matching frame name alone does not identify a calibration generation.
 The caller must ensure the calibration matches the selected saved map and treat
 transform uncertainty/time alignment appropriately before hardware use.
 
 ## Ownership and checks
 
 [README](README.md) owns general localization; [LOCAL_MAINTENANCE](LOCAL_MAINTENANCE.md)
-owns workspace maintenance. Conversion is owned by `gnss2map/README.md`, GNSS status
-by `ublox_dgnss/docs/gnss_output_contract.md`, and opt-in integration by
-`cat_robot/cat_navigation/README.md`. Exploration/normal-navigation orchestration is
-outside this feature; see workspace `docs/localization_recovery/HANDOFF.md`.
+owns workspace maintenance. Conversion is owned by [gnss2map](../gnss2map/README.md),
+GNSS status by [the ublox output contract](../ublox_dgnss/docs/gnss_output_contract.md),
+and opt-in integration by [cat_navigation](../cat_robot/cat_navigation/README.md).
+Exploration/normal-navigation orchestration is outside this feature; the dated
+[HANDOFF](../../docs/localization_recovery/HANDOFF.md) records the broader design and
+its state before implementation, not a current interface specification.
 
 Tests `test_recovery.cpp` use deterministic clocks and random seeds, no ROS graph.
-`test_recovery_ros.py` starts only emcl2 on localhost/domain 216 with synthetic map,
-TF, scans and map-frame GNSS; no robot, motion client, simulator or receiver is started.
+[test_recovery_ros.py](test/test_recovery_ros.py) starts emcl2 on localhost/domain 216
+with synthetic map, TF, scans and map-frame GNSS. Its pipeline case additionally starts
+ublox's output converter and gnss2map with synthetic UBX inputs. It starts no receiver
+driver, NTRIP client, robot, motion client or simulator.
 Do not execute legacy `test/test.bash` for offline validation.
-Fresh-build commands and complete evidence are in workspace
-`log/gnss_reset_20261117/`; offline checks do not establish hardware localization accuracy.
+[Implementation validation](docs/validation/gnss_reset_20261117.md) records the
+83 individual offline cases and links the generated command/log evidence. These results
+belong to that implementation, not to every future checkout. See the separate
+[documentation review](docs/validation/gnss_docs_review_20261117.md) for this prose-only check.
+Offline checks do not establish hardware localization accuracy.

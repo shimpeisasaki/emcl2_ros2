@@ -6,7 +6,7 @@ The 2026-11-12 implementation starts at
 `cbaa31735b0b09c6e3fc26a4a0964bc44ad7c22d` on local baseline `main`.
 The locally available `upstream/main` and merge base are
 `3eacea2dc70d9d29eb0d501d01eb5df001814776`; no remote refresh was performed.
-The implementation branch is `refactor/implementation-20261112`.
+That dated implementation used `refactor/implementation-20261112`; it is a historical baseline, not the current branch selection.
 Retain the upstream layout, package name `emcl2`, and [COPYING](COPYING).
 
 Three local commits preserve scan freshness/rejection (`c125a45`),
@@ -30,11 +30,12 @@ and run `bash -n test/demo.bash`. Do not execute the demo as a syntax check.
 requests and navigation goals; its wrapper name does not make it a safe offline unit test.
 Simulation and graph interaction require separate authorization.
 
-For an authorized future code change, source ROS 2 Humble and build only `emcl2`
-from the actual checkout with `colcon build --symlink-install --packages-select emcl2
---parallel-workers 2`. Review the selected CMake tests and fixtures before
-`colcon test --packages-select emcl2`; record `colcon test-result` separately.
-No build, simulation or localization runtime was exercised for this documentation unit.
+For separately authorized code validation, build the sibling `emcl2_msgs` package from
+source before emcl2, and inspect the selected fixtures. The current feature's input,
+lifecycle, fixture coverage and evidence are owned by [GNSS_RECOVERY.md](GNSS_RECOVERY.md).
+Use explicit source paths, new build/install outputs and no more than two compilation
+workers. Record `colcon test-result` separately. The 2026-11-12 documentation unit did
+not run build, simulation or localization runtime; later checks have separate dated records.
 
 ## Change evidence and data
 
@@ -52,3 +53,10 @@ Follow [AGENTS.md](AGENTS.md); do not update upstream or move main as a document
 ## External recovery extension (2026-11-17)
 
 The feature branch selectively implements [GNSS recovery](GNSS_RECOVERY.md) on the current main baseline. The historical divergent branch is not merged; scan freshness/duplicate guards remain. The new sibling `emcl2_msgs` repository must be built from source with emcl2.
+
+
+## GNSS documentation review (2026-11-17)
+
+[Documentation review](docs/validation/gnss_docs_review_20261117.md) records this prose-only
+check. [Implementation validation](docs/validation/gnss_reset_20261117.md) records the
+prior source build and offline tests; they were not rerun for the documentation check.
