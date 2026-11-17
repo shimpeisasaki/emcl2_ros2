@@ -37,6 +37,7 @@ EMcl2Node::EMcl2Node()
   ros_clock_(RCL_SYSTEM_TIME),
   init_pf_(false),
   init_request_(false),
+  initialpose_receive_(false),
   simple_reset_request_(false),
   scan_receive_(false),
   map_receive_(false)
@@ -44,6 +45,7 @@ EMcl2Node::EMcl2Node()
 	// declare ros parameters
 	declareParameter();
 	initCommunication();
+	initRecovery();
 }
 
 EMcl2Node::~EMcl2Node() {}
@@ -188,6 +190,9 @@ std::shared_ptr<LikelihoodFieldMap> EMcl2Node::initMap(void)
 
 void EMcl2Node::receiveMap(const nav_msgs::msg::OccupancyGrid::ConstSharedPtr msg)
 {
+	if (active_reset_) finishReset(Reset::FAILED, "map replaced");
+	health_.invalidate();
+	last_sensor_update_scan_ns_ = 0;
 	map_ = *msg;
 	map_receive_ = true;
 	RCLCPP_INFO(get_logger(), "Received map.");
@@ -227,6 +232,8 @@ void EMcl2Node::initialPoseReceived(
 			init_x_ = msg->pose.pose.position.x;
 			init_y_ = msg->pose.pose.position.y;
 			init_t_ = tf2::getYaw(msg->pose.pose.orientation);
+			if (active_reset_) finishReset(Reset::FAILED, "external initial pose");
+			health_.invalidate();
 			pf_->initialize(init_x_, init_y_, init_t_);
 			initialpose_receive_ = true;
 		} else {
@@ -257,10 +264,14 @@ void EMcl2Node::loop(void)
 		return;
 	}
 	if (init_request_) {
+		if (active_reset_) finishReset(Reset::FAILED, "external initial pose");
+		health_.invalidate();
 		pf_->initialize(init_x_, init_y_, init_t_);
 		last_sensor_update_scan_ns_ = 0;
 		init_request_ = false;
 	} else if (simple_reset_request_) {
+		if (active_reset_) finishReset(Reset::FAILED, "external global localization");
+		health_.invalidate();
 		pf_->simpleReset();
 		last_sensor_update_scan_ns_ = 0;
 		simple_reset_request_ = false;
@@ -282,7 +293,18 @@ void EMcl2Node::loop(void)
 		}
 
 		if (scan_time_stamp_.nanoseconds() != last_sensor_update_scan_ns_) {
-			pf_->sensorUpdate(lx, ly, lt, inv);
+			bool replaced = false;
+			if (active_reset_ && !reset_msg_.particles_replaced) {
+				replaced = applyGnssReset();
+			}
+			if (pf_->sensorUpdate(lx, ly, lt, inv)) {
+				if (!replaced) {
+					observeHealth();
+				}
+			} else {
+				health_.invalidate();
+				setHealth(Health::UNAVAILABLE, "scan has no usable beams");
+			}
 			last_sensor_update_scan_ns_ = scan_time_stamp_.nanoseconds();
 		}
 

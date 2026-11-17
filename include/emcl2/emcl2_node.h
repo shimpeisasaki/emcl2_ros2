@@ -6,6 +6,14 @@
 #define EMCL2__EMCL2_NODE_H_
 
 #include "emcl2/ExpResetMcl2.h"
+#include "emcl2/Recovery.h"
+#include <emcl2_msgs/msg/localization_status.hpp>
+#include <emcl2_msgs/msg/gnss_reset_status.hpp>
+#include <emcl2_msgs/srv/request_gnss_reset.hpp>
+#include <chrono>
+#include <deque>
+#include <random>
+#include <map>
 #include "emcl2/LikelihoodFieldMap.h"
 #include "emcl2/OdomModel.h"
 
@@ -39,7 +47,37 @@ class EMcl2Node : public rclcpp::Node
 	int getOdomFreq(void);
 
       private:
+	using Health = emcl2_msgs::msg::LocalizationStatus;
+	using Reset = emcl2_msgs::msg::GnssResetStatus;
+	using Request = emcl2_msgs::srv::RequestGnssReset;
+	using Steady = std::chrono::steady_clock;
 	std::shared_ptr<ExpResetMcl2> pf_;
+	RecoveryHealth health_;
+	Health health_msg_;
+	Reset reset_msg_;
+	std::string instance_id_, antenna_frame_;
+	bool use_gnss_reset_ = false, active_reset_ = false;
+	double gnss_max_age_ = 1.0, max_reset_duration_ = 60.0, sigma_floor_ = 0.25;
+	Steady::time_point reset_started_, gnss_received_;
+	std::mt19937 random_{std::random_device{}()};
+	geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr gnss_pose_;
+	rclcpp::Subscription<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr gnss_sub_;
+	rclcpp::Publisher<Health>::SharedPtr health_pub_;
+	rclcpp::Publisher<Reset>::SharedPtr reset_pub_;
+	rclcpp::Service<Request>::SharedPtr reset_service_;
+	rclcpp::TimerBase::SharedPtr recovery_timer_;
+	std::map<std::string, Request::Response> accepted_requests_;
+	std::deque<std::string> request_order_;
+	double reset_timeout_ = 0;
+	uint64_t attempt_counter_ = 0;
+	bool gnssFresh();
+	void initRecovery();
+	void recoveryTick();
+	void observeHealth();
+	bool applyGnssReset();
+	void finishReset(uint8_t state, const std::string & reason);
+	void setHealth(uint8_t state, const std::string & reason);
+	void requestReset(const Request::Request::SharedPtr request, Request::Response::SharedPtr response);
 
 	rclcpp::Publisher<geometry_msgs::msg::PoseArray>::SharedPtr particlecloud_pub_;
 	rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr pose_pub_;

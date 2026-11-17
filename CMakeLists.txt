@@ -22,9 +22,17 @@ ament_auto_add_executable(emcl2_node
   src/Scan.cpp
   src/LikelihoodFieldMap.cpp
   src/emcl2_node.cpp
+  src/Recovery.cpp
 )
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(recovery_ros test/test_recovery_ros.py TIMEOUT 90
+    ENV PYTHONNOUSERSITE=1 ROS_DOMAIN_ID=216 ROS_LOCALHOST_ONLY=1)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_recovery test/test_recovery.cpp)
+  target_include_directories(test_recovery PRIVATE include)
+
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
   set(ament_cmake_cpplint_FOUND TRUE)

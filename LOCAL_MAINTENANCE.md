@@ -48,3 +48,7 @@ Read payloads only for a named question, bounded by files/topics/time/sample cou
 Exclude generated output/data/cache from broad searches. Keep complete logs in a
 generated log directory, summarize bounded causal excerpts, and preserve exit codes.
 Follow [AGENTS.md](AGENTS.md); do not update upstream or move main as a documentation check.
+
+## External recovery extension (2026-11-17)
+
+The feature branch selectively implements [GNSS recovery](GNSS_RECOVERY.md) on the current main baseline. The historical divergent branch is not merged; scan freshness/duplicate guards remain. The new sibling `emcl2_msgs` repository must be built from source with emcl2.

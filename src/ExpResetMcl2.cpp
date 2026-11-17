@@ -8,6 +8,7 @@
 #include <stdlib.h>
 
 #include <cmath>
+#include <algorithm>
 
 namespace emcl2
 {
@@ -28,7 +29,7 @@ ExpResetMcl2::ExpResetMcl2(
 
 ExpResetMcl2::~ExpResetMcl2() {}
 
-void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, bool inv)
+bool ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, bool inv)
 {
 	Scan scan;
 	scan = scan_;
@@ -47,14 +48,14 @@ void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, 
 	double valid_pct = 0.0;
 	int valid_beams = scan.countValidBeams(&valid_pct);
 	if (valid_beams == 0) {
-		return;
+		return false;
 	}
 
 	for (auto & p : particles_) {
 		p.w_ *= p.likelihood(map_.get(), scan);
 	}
 
-	alpha_ = nonPenetrationRate(static_cast<int>(particles_.size() * extraction_rate_), map_.get(), scan);
+	alpha_ = nonPenetrationRate(std::max(1, static_cast<int>(particles_.size() * extraction_rate_)), map_.get(), scan);
 	RCLCPP_DEBUG(rclcpp::get_logger("emcl2_node"), "ALPHA: %f / %f", alpha_, alpha_threshold_);
 	if (alpha_ < alpha_threshold_) {
 		RCLCPP_DEBUG(rclcpp::get_logger("emcl2_node"), "RESET");
@@ -71,6 +72,7 @@ void ExpResetMcl2::sensorUpdate(double lidar_x, double lidar_y, double lidar_t, 
 	}
 
 	processed_seq_ = scan_.seq_;
+	return true;
 }
 
 double ExpResetMcl2::nonPenetrationRate(int skip, LikelihoodFieldMap * map, Scan & scan)

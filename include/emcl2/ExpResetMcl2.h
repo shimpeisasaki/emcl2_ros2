@@ -20,7 +20,7 @@ class ExpResetMcl2 : public Mcl
 	  double extraction_rate, double successive_penetration_threshold, bool sensor_reset);
 	~ExpResetMcl2();
 
-	void sensorUpdate(double lidar_x, double lidar_y, double lidar_t, bool inv);
+	bool sensorUpdate(double lidar_x, double lidar_y, double lidar_t, bool inv);
 
       private:
 	double alpha_threshold_;

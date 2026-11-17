@@ -132,3 +132,7 @@ The followings have never been implemented yet.
 [^1]: R. Ueda: "[Syokai Kakuritsu Robotics (lecture note on probabilistic robotics)](https://www.amazon.co.jp/dp/B082SN3VTD)," Kodansya, 2019.
 
 [^2]: R. Ueda, T. Arai, K. Sakamoto, T. Kikuchi, S. Kamiya: Expansion resetting for recovery from fatal error in Monte Carlo localization - comparison with sensor resetting methods, IEEE/RSJ IROS, pp.2481-2486, 2004. 
+
+## External GNSS recovery
+
+See [GNSS_RECOVERY.md](GNSS_RECOVERY.md) for health notifications, externally requested reset, input contract and offline tests.
