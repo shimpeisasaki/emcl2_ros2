@@ -1,6 +1,6 @@
 # Repository maintenance
 
-Preserve upstream localization structure and COPYING. Current public config is config/emcl2.param.yaml. Preserve scan age/duplicate rejection and independent driving watchdog boundaries. Do not merge the divergent GNSS experiment indiscriminately.
+Preserve the upstream localization structure within emcl2/ and the root COPYING. This repository contains sibling ROS packages emcl2/ and emcl2_msgs/; do not add package.xml at the repository root. Current public source config is emcl2/config/emcl2.param.yaml (installed share path remains config/emcl2.param.yaml). Preserve scan age/duplicate rejection and independent driving watchdog boundaries. Do not merge the divergent GNSS experiment indiscriminately.
 
 ## Changes and evidence
 
