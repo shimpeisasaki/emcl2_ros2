@@ -39,8 +39,13 @@ jobs:
           cd /root/ros2_ws
           source /opt/ros/$ROS_DISTRO/setup.bash
           rosdep update
-          rosdep install -i -y --from-path src --rosdistro $ROS_DISTRO
-          colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+          # These workspace-only test packages are used by the GNSS pipeline fixture,
+          # not the legacy simulation test.bash executed by this standalone CI job.
+          rosdep install -i -y --from-path src --rosdistro $ROS_DISTRO \
+            --skip-keys "gnss2map ublox_nav_sat_fix_hp_node ublox_ubx_msgs"
+          CMAKE_BUILD_PARALLEL_LEVEL=2 colcon build --base-paths src/emcl2_ros2 \
+            --packages-select emcl2_msgs emcl2 --executor sequential \
+            --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
         shell: bash
       - name: Exec
         run: |

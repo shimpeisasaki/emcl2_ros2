@@ -34,11 +34,14 @@ All names below are relative ROS names, so a namespace/remap applies normally.
 | `localization/gnss_reset_status` | `emcl2_msgs/msg/GnssResetStatus` | 10 Hz after first request and transitions; latest result retained |
 | `gnss/map_pose` | `geometry_msgs/msg/PoseWithCovarianceStamped` | SensorDataQoS input; calibrated map-frame antenna position |
 
-`emcl2_msgs` is a separate sibling repository/package (`src/emcl2_msgs`) to preserve
-normal colcon package discovery without restructuring upstream emcl2.
-The exact fields/constants are in [LocalizationStatus.msg](../emcl2_msgs/msg/LocalizationStatus.msg),
-[RequestGnssReset.srv](../emcl2_msgs/srv/RequestGnssReset.srv), and
-[GnssResetStatus.msg](../emcl2_msgs/msg/GnssResetStatus.msg).
+`emcl2_msgs` and `emcl2` are separate ROS packages in this repository:
+`src/emcl2_ros2/emcl2_msgs` and `src/emcl2_ros2/emcl2`. The repository root has no
+package.xml, so normal colcon discovery finds both. Package names and all public
+interfaces are unchanged. The [layout migration](docs/validation/emcl2_layout_20261117.md)
+records history preservation and fresh-output verification.
+The exact fields/constants are in [LocalizationStatus.msg](emcl2_msgs/msg/LocalizationStatus.msg),
+[RequestGnssReset.srv](emcl2_msgs/srv/RequestGnssReset.srv), and
+[GnssResetStatus.msg](emcl2_msgs/msg/GnssResetStatus.msg).
 Do not infer health from message arrival alone. `header.stamp` is publication time;
 `scan_stamp` is the last evaluated observation. `instance_id` distinguishes process
 restarts and `transition_id` increments on state changes. A late subscriber receives
@@ -108,7 +111,7 @@ transform uncertainty/time alignment appropriately before hardware use.
 
 ## Ownership and checks
 
-[README](README.md) owns general localization; [LOCAL_MAINTENANCE](LOCAL_MAINTENANCE.md)
+[Package README](emcl2/README.md) owns general localization; [LOCAL_MAINTENANCE](LOCAL_MAINTENANCE.md)
 owns workspace maintenance. Conversion is owned by [gnss2map](../gnss2map/README.md),
 GNSS status by [the ublox output contract](../ublox_dgnss/docs/gnss_output_contract.md),
 and opt-in integration by [cat_navigation](../cat_robot/cat_navigation/README.md).
@@ -117,11 +120,11 @@ Exploration/normal-navigation orchestration is outside this feature; the dated
 its state before implementation, not a current interface specification.
 
 Tests `test_recovery.cpp` use deterministic clocks and random seeds, no ROS graph.
-[test_recovery_ros.py](test/test_recovery_ros.py) starts emcl2 on localhost/domain 216
+[test_recovery_ros.py](emcl2/test/test_recovery_ros.py) starts emcl2 on localhost/domain 216
 with synthetic map, TF, scans and map-frame GNSS. Its pipeline case additionally starts
 ublox's output converter and gnss2map with synthetic UBX inputs. It starts no receiver
 driver, NTRIP client, robot, motion client or simulator.
-Do not execute legacy `test/test.bash` for offline validation.
+Do not execute legacy `emcl2/test/test.bash` for offline validation.
 [Implementation validation](docs/validation/gnss_reset_20261117.md) records the
 83 individual offline cases and links the generated command/log evidence. These results
 belong to that implementation, not to every future checkout. See the separate
